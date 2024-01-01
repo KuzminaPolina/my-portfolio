@@ -110,8 +110,8 @@
 
 @-webkit-keyframes slide-left {
   0% {
-    -webkit-transform: translateX(150px);
-    transform: translateX(150px);
+    -webkit-transform: translateX(200px);
+    transform: translateX(200px);
   }
   100% {
     -webkit-transform: translateX(0);
@@ -121,8 +121,8 @@
 
 @keyframes slide-left {
   0% {
-    -webkit-transform: translateX(150px);
-    transform: translateX(150px);
+    -webkit-transform: translateX(200px);
+    transform: translateX(200px);
   }
   100% {
     -webkit-transform: translateX(0);
@@ -160,4 +160,18 @@
 .white__gradient {
   background: rgba(255, 255, 255, 0.6);
   filter: blur(750px);
+}
+
+.menu {
+  border: solid 1px transparent;
+}
+
+.menu:hover {
+  border: dashed 1px black;
+  border-radius: 45%;
+}
+
+.menu:active {
+  border: solid 1px black;
+  border-radius: 45%;
 }

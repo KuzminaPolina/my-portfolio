@@ -10,7 +10,7 @@ const Navbar = () => {
         {navLinks.map((nav, index) => (
           <li
             key={nav.id}
-            className={`font-menu font-normal cursor-pointer text-[24px] ${
+            className={`font-menu px-2 font-normal cursor-pointer menu text-[24px] ${
               index === navLinks.length - 1 ? "mr-0" : "mr-10"
             }`}
           >
@@ -37,7 +37,7 @@ const Navbar = () => {
             {navLinks.map((nav) => (
               <li
                 key={nav.id}
-                className={`font-menu font-normal p-2 bg-white text-center cursor-pointe text-[20px]`}
+                className={`font-menu font-normal p-2 bg-white text-center cursor-pointe text-[20px] menu`}
               >
                 <a href={`#${nav.id}`}>{nav.title}</a>
               </li>
