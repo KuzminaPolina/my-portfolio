@@ -175,3 +175,153 @@
   border: solid 1px black;
   border-radius: 45%;
 }
+
+@keyframes moveStick {
+  0% {
+    -webkit-transform: rotate(5deg);
+    transform: rotate(5deg);
+  }
+
+  50% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(5deg);
+    transform: rotate(5deg);
+  }
+}
+
+.rotate5deg {
+  animation-name: moveStick;
+  animation-duration: 0.5s;
+  animation-timing-function: cubic-bezier(0.4, 0.45, 0.45, 0.4);
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+}
+
+.rotateIconCSS {
+  animation-name: moveIconCSS;
+  animation-duration: 0.5s;
+  animation-timing-function: cubic-bezier(0.4, 0.45, 0.45, 0.4);
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+}
+
+@keyframes moveIconCSS {
+  0% {
+    -webkit-transform: rotate(20deg);
+    transform: rotate(20deg);
+  }
+
+  50% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(20deg);
+    transform: rotate(20deg);
+  }
+}
+
+.rotateIconTW {
+  animation-name: moveIconTW;
+  animation-duration: 0.5s;
+  animation-timing-function: cubic-bezier(0.4, 0.45, 0.45, 0.4);
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+}
+
+@keyframes moveIconTW {
+  0% {
+    -webkit-transform: rotate(10deg);
+    transform: rotate(10deg);
+  }
+
+  50% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(10deg);
+    transform: rotate(10deg);
+  }
+}
+
+.rotateIconJS {
+  animation-name: moveIconJS;
+  animation-duration: 0.5s;
+  animation-timing-function: cubic-bezier(0.4, 0.45, 0.45, 0.4);
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+}
+
+@keyframes moveIconJS {
+  0% {
+    -webkit-transform: rotate(40deg);
+    transform: rotate(40deg);
+  }
+
+  50% {
+    -webkit-transform: rotate(60deg);
+    transform: rotate(60deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(40deg);
+    transform: rotate(40deg);
+  }
+}
+
+.rotateIconTS {
+  animation-name: moveIconTS;
+  animation-duration: 0.5s;
+  animation-timing-function: cubic-bezier(0.4, 0.45, 0.45, 0.4);
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+}
+
+@keyframes moveIconTS {
+  0% {
+    -webkit-transform: rotate(-35deg);
+    transform: rotate(-35deg);
+  }
+
+  50% {
+    -webkit-transform: rotate(-15deg);
+    transform: rotate(-15deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(-35deg);
+    transform: rotate(-35deg);
+  }
+}
+
+.rotateIconHTML {
+  animation-name: moveIconHTML;
+  animation-duration: 0.5s;
+  animation-timing-function: cubic-bezier(0.4, 0.45, 0.45, 0.4);
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+}
+
+@keyframes moveIconHTML {
+  0% {
+    -webkit-transform: rotate(-10deg);
+    transform: rotate(-10deg);
+  }
+
+  50% {
+    -webkit-transform: rotate(10deg);
+    transform: rotate(10deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(-10deg);
+    transform: rotate(-10deg);
+  }
+}

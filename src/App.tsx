@@ -11,19 +11,19 @@ import styles from "./style";
 
 function App() {
   return (
-    <div className="bg-white text-black">
+    <div className="bg-slate-50 text-black">
       <div className={`${styles.paddingX} ${styles.flexCenter}`}>
         <div className={`${styles.boxWidth}`}>
           <Navbar />
         </div>
       </div>
-      <div className={`bg-white ${styles.flexStart}`}>
+      <div className={`bg-slate-50 ${styles.flexStart}`}>
         <div className={`${styles.boxWidth}`}>
           <Hero />
         </div>
       </div>
 
-      <main className={`bg-white ${styles.flexStart}`}>
+      <main className={`bg-slate-50 ${styles.flexStart}`}>
         <div className={`${styles.boxWidth}`}>
           <About />
           <Skills />
@@ -34,7 +34,7 @@ function App() {
         </div>
       </main>
 
-      <footer className={`bg-white ${styles.flexStart}`}>
+      <footer className={`bg-slate-50 ${styles.flexStart}`}>
         <div className={`${styles.boxWidth}`}>
           <Footer />
         </div>

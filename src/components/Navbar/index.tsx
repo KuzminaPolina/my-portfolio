@@ -11,7 +11,7 @@ const Navbar = () => {
           <li
             key={nav.id}
             className={`font-menu px-2 font-normal cursor-pointer menu text-[24px] ${
-              index === navLinks.length - 1 ? "mr-0" : "mr-10"
+              index === navLinks.length - 1 ? "mr-0" : "mr-6"
             }`}
           >
             <a href={`#${nav.id}`}>{nav.title}</a>
@@ -19,7 +19,7 @@ const Navbar = () => {
         ))}
       </ul>
 
-      <div className="sm:hidden flex flex-1 justify-end items-center">
+      <div className="sm:hidden flex flex-1 justify-end items-center z-10">
         <img
           src={toggle ? close : menu}
           alt="menu"
