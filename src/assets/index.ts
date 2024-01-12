@@ -19,6 +19,8 @@ import envelop from "./mail-icon.png";
 import phone from "./phone-icon.png";
 import gitIcon from "./git-icon.png";
 import linkedin from "./linkedin-icon.png";
+import crowUp from "./crow-wings-up.png";
+import crowDown from "./crow-wings-down.png";
 
 export {
   quotes,
@@ -42,4 +44,6 @@ export {
   phone,
   gitIcon,
   linkedin,
+  crowUp,
+  crowDown,
 };

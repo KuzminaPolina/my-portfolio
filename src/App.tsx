@@ -11,7 +11,7 @@ import styles from "./style";
 
 function App() {
   return (
-    <div className="bg-slate-50 text-black">
+    <div className={`bg-slate-50 text-black flex flex-col`}>
       <div className={`${styles.paddingX} ${styles.flexCenter}`}>
         <div className={`${styles.boxWidth}`}>
           <Navbar />
@@ -23,21 +23,19 @@ function App() {
         </div>
       </div>
 
-      <main className={`bg-slate-50 ${styles.flexStart}`}>
-        <div className={`${styles.boxWidth}`}>
-          <About />
-          <Skills />
-          <Portfolio />
-          <Resume />
-          <Contacts />
-          <Game />
-        </div>
+      <main
+        className={`bg-slate-50 max-w-screen-xl flex flex-col self-center w-[100%]`}
+      >
+        <Resume />
+        <About />
+        <Skills />
+        <Portfolio />
+        <Contacts />
+        <Game />
       </main>
 
-      <footer className={`bg-slate-50 ${styles.flexStart}`}>
-        <div className={`${styles.boxWidth}`}>
-          <Footer />
-        </div>
+      <footer className={`bg-slate-50`}>
+        <Footer />
       </footer>
     </div>
   );

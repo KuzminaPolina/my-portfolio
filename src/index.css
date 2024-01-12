@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Waiting+for+the+Sunrise&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Sue+Ellen+Francisco&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Londrina+Outline&family=Waiting+for+the+Sunrise&display=swap");
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
@@ -17,6 +18,7 @@
 
 * {
   scroll-behavior: smooth;
+  box-sizing: border-box;
 }
 
 .text-gradient {
@@ -62,6 +64,17 @@
     #ffffff -278.56%,
     #6d6d6d -78.47%,
     #11101d 91.61%
+  );
+}
+
+.bg-black-to-white-gradient {
+  background: linear-gradient(
+    180deg,
+    #f9fafb 0%,
+    rgba(130, 174, 255, 0.568) 30%,
+    rgba(118, 166, 255, 0.568) 40%,
+    rgba(130, 174, 255, 0.568) 50%,
+    #f9fafb 100%
   );
 }
 
@@ -324,4 +337,65 @@
     -webkit-transform: rotate(-10deg);
     transform: rotate(-10deg);
   }
+}
+
+.crow-bg-top {
+  background-image: url("./assets/silly-crow-up.png");
+  background-size: contain;
+  background-position: top;
+  background-repeat: no-repeat;
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  top: 0;
+  left: 10%;
+}
+
+.crow-bg-bottom {
+  background-image: url("./assets/silly-crow-down.png");
+  background-size: contain;
+  background-position: top;
+  background-repeat: no-repeat;
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  bottom: 0;
+  right: 10%;
+}
+
+.gradient-for-dots-top {
+  background: linear-gradient(90deg, #ffffff00 0%, #f8fafc 10%);
+}
+
+.gradient-for-dots-bottom {
+  background: linear-gradient(90deg, #f8fafc 90%, #ffffff00 100%);
+}
+
+.bg-dotted-top {
+  background-image: url("./assets/dots.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: repeat-x;
+  width: 100%;
+  height: 34px;
+  position: absolute;
+  top: 13%;
+  left: 0%;
+}
+
+.bg-dotted-bottom {
+  background-image: url("./assets/dots.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: repeat-x;
+  width: 100%;
+  height: 34px;
+  position: absolute;
+  bottom: 11%;
+  right: 0%;
+}
+
+.outline-text {
+  -webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-color: black;
 }

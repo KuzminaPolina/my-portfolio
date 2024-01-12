@@ -20,7 +20,7 @@ const Hero = () => {
 
   return (
     <section
-      className={`flex sm:flex-row flex-col-reverse ${styles.paddingX}`}
+      className={`flex sm:flex-row flex-col-reverse md:px-16 px-6`}
       id="home"
     >
       <div
@@ -73,7 +73,7 @@ const Hero = () => {
         />
       </div>
       <div
-        className={`flex-1 ${styles.flexStart} flex-col xl:px-0 sm:px-0 px-6 items-center justify-center xl:w-1/2 sm:w-full`}
+        className={`flex-1 ${styles.flexStart} flex-col xl:px-0 sm:px-0 p-6 items-center justify-center xl:w-1/2 sm:w-full`}
       >
         <div>
           <h1 className="font-poppins text-center text-[24px] py-4">
