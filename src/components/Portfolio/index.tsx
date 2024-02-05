@@ -69,10 +69,10 @@ const Single = ({ project }) => {
             className="textContainer flex flex-col gap-[30px] flex-1 z-0"
             style={{ x: rtl }}
           >
-            <h3 className="font-menu font-extrabold uppercase text-[60px] p-4 md:block hidden">
+            <h3 className="font-menu font-extrabold uppercase text-[60px] py-2 md:block hidden">
               {project.title}
             </h3>
-            <ul className="list-disc">
+            <ul className="list-disc pl-[20px]">
               <li>{project.feature}</li>
               <li>{project.stack}</li>
               <li>{project.additionalInfo}</li>
@@ -101,7 +101,7 @@ const Portfolio = () => {
         <h2 className="font-header text-[80px] text-center pb-8">Portfolio</h2>
         <motion.div
           style={{ scaleX }}
-          className="progressBar h-[10px] bg-black"
+          className="progressBar h-[10px] colorful-gradient"
         ></motion.div>
       </div>
       {projects.map((project) => (

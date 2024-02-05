@@ -21,34 +21,6 @@
   box-sizing: border-box;
 }
 
-.text-gradient {
-  background: radial-gradient(
-    64.18% 64.18% at 71.16% 35.69%,
-    #def9fa 0.89%,
-    #bef3f5 17.23%,
-    #9dedf0 42.04%,
-    #7de7eb 55.12%,
-    #5ce1e6 71.54%,
-    #33bbcf 100%
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  /* text-fill-color: transparent; */
-}
-
-.bg-blue-gradient {
-  background: linear-gradient(
-    157.81deg,
-    #def9fa -43.27%,
-    #bef3f5 -21.24%,
-    #9dedf0 12.19%,
-    #7de7eb 29.82%,
-    #5ce1e6 51.94%,
-    #33bbcf 90.29%
-  );
-}
-
 .bg-black-gradient {
   background: linear-gradient(
     144.39deg,
@@ -67,14 +39,13 @@
   );
 }
 
-.bg-black-to-white-gradient {
+.colorful-gradient {
+  background: rgb(131, 58, 180);
   background: linear-gradient(
-    180deg,
-    #f9fafb 0%,
-    rgba(130, 174, 255, 0.568) 30%,
-    rgba(118, 166, 255, 0.568) 40%,
-    rgba(130, 174, 255, 0.568) 50%,
-    #f9fafb 100%
+    90deg,
+    rgba(131, 58, 180, 1) 0%,
+    rgba(253, 29, 29, 1) 50%,
+    rgba(252, 176, 69, 1) 100%
   );
 }
 
