@@ -1,42 +1,57 @@
 const About = () => {
   return (
-    <div className="flex flex-col p-28">
-      <h2 className="font-header text-[100px] text-center">About Me:</h2>
+    <section className="flex flex-col items-center justify-center px-4 py-4 sm:px-8 md:px-28 snap-center h-[100vh]">
       <div className="flex flex-col md:flex-row self-center w-[100%] gap-8">
-        <div className="w-1/2">
+        <div className="md:w-1/2">
+          <h2 className="font-header text-[80px] text-right pb-8">
+            Hard skills
+          </h2>
           <h3 className="font-menu2 uppercase text-[28px] mb-4 text-right">
-            Name:
+            Main languages:
           </h3>
           <p className="font-poppins text-[24px] mb-8 text-right">
-            Kuzmina Polina
+            JavaScript, <br />
+            TypeScript
           </p>
           <h3 className="font-menu2 uppercase text-[28px] mb-4 text-right">
-            Birthday:
-          </h3>
-          <p className="font-poppins text-[24px] mb-8 text-right">23.11.1988</p>
-          <h3 className="font-menu2 uppercase text-[28px] mb-4 text-right">
-            Working languages:
+            Front-end techs I worked with:
           </h3>
           <p className="font-poppins text-[24px] mb-8 text-right">
-            Russian (Native), English (IELTS 8.0/C1), Chinese (B2)
+            HTML5, CSS3, LESS/SASS, Tailwind,
+            <br />
+            React, Gulp, Vite, Git
+          </p>
+          <h3 className="font-menu2 uppercase text-[28px] mb-4 text-right">
+            Speaking languages:
+          </h3>
+          <p className="font-poppins text-[24px] mb-8 text-right">
+            Russian (Native),
+            <br />
+            English (IELTS 8.0/C1),
+            <br /> Chinese (B2).
           </p>
         </div>
-        <div className="w-1/2">
-          <h3 className="font-menu2 uppercase text-[28px] mb-4">Skills:</h3>
-          <p className="font-poppins text-[24px] mb-8">
-            HTML5, CSS3, LESS/SASS, Javascript, Git.
-          </p>
-          <h3 className="font-menu2 uppercase text-[28px] mb-4">Hobbies:</h3>
-          <p className="font-poppins text-[24px] mb-8">
-            Learning, drawing, dancing.
+        <div className="md:w-1/2">
+          <h2 className="font-header text-[80px] pb-8">Soft skills</h2>
+          <h3 className="font-menu2 uppercase text-[28px] mb-4">Experience:</h3>
+          <p className="font-poppins text-[24px] mb-8 max-w-[370px]">
+            Teamwork, international teams, management positions
           </p>
           <h3 className="font-menu2 uppercase text-[28px] mb-4">
-            Favorite animals:
+            Personal qualities:
           </h3>
-          <p className="font-poppins text-[24px] mb-8">Dogs, cats, dolphins.</p>
+          <p className="font-poppins text-[24px] mb-8">
+            Inquisitive, responsible, initiative,
+            <br />
+            love learning new things
+          </p>
+          <h3 className="font-menu2 uppercase text-[28px] mb-4">Hobbies:</h3>
+          <p className="font-poppins text-[24px] mb-8 max-w-[370px]">
+            Drawing, dancing, hiking and seeing nature.
+          </p>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

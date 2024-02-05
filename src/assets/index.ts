@@ -21,6 +21,9 @@ import gitIcon from "./git-icon.png";
 import linkedin from "./linkedin-icon.png";
 import crowUp from "./crow-wings-up.png";
 import crowDown from "./crow-wings-down.png";
+import sedona from "./SedonaXS.jpg";
+import gym from "./gymXS.jpg";
+import travels from "./travelsXS.jpg";
 
 export {
   quotes,
@@ -46,4 +49,7 @@ export {
   linkedin,
   crowUp,
   crowDown,
+  gym,
+  sedona,
+  travels,
 };

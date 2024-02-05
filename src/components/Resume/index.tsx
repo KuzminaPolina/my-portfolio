@@ -16,7 +16,7 @@ const Resume = () => {
   const moveBarBack = useTransform(scrollYProgress, [0, 1], ["0%", "-100%"]);
   return (
     <section
-      className="relative flex h-[70vh] w-[100%] md:h-[90vh] justify-center items-center overflow-hidden"
+      className="relative flex h-[100vh] w-[100%] md:h-[90vh] justify-center items-center overflow-hidden bg-slate-50"
       ref={ref}
     >
       <motion.a

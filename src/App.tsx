@@ -6,7 +6,6 @@ import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
 import Portfolio from "./components/Portfolio";
 import Resume from "./components/Resume";
-import Skills from "./components/Skills";
 import styles from "./style";
 
 function App() {
@@ -27,9 +26,8 @@ function App() {
         className={`bg-slate-50 max-w-screen-xl flex flex-col self-center w-[100%]`}
       >
         <Resume />
-        <About />
-        <Skills />
         <Portfolio />
+        <About />
         <Contacts />
         <Game />
       </main>

@@ -20,7 +20,7 @@ const Hero = () => {
 
   return (
     <section
-      className={`flex sm:flex-row flex-col-reverse md:px-16 px-6`}
+      className={`flex sm:flex-row flex-col-reverse md:px-16 px-6 snap-center`}
       id="home"
     >
       <div
