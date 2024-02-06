@@ -39,6 +39,14 @@
   );
 }
 
+.link-button {
+  background-color: #000000;
+}
+
+.link-button:hover {
+  background-color: #424242;
+}
+
 .colorful-gradient {
   background: rgb(131, 58, 180);
   background: linear-gradient(

@@ -9,6 +9,7 @@ const projects: {
   feature: string;
   stack: string;
   additionalInfo: string;
+  link: string;
 }[] = [
   {
     id: 1,
@@ -17,6 +18,7 @@ const projects: {
     feature: "Adaptive website",
     stack: "HTML, CSS, LESS, Gulp, JavaScript",
     additionalInfo: "All pages clickable",
+    link: "https://kuzminapolina.github.io/2098917-sedona-new/",
   },
   {
     id: 2,
@@ -25,6 +27,7 @@ const projects: {
     feature: "Fully responsive landing page",
     stack: "HTML, CSS, SASS, Gulp, Javascript",
     additionalInfo: "Responsive sliders",
+    link: "https://kuzminapolina.github.io/fitness_2.0/",
   },
   {
     id: 3,
@@ -33,6 +36,7 @@ const projects: {
     feature: "Fully responsive landing page",
     stack: "HTML, CSS, SASS, Gulp, Javascript",
     additionalInfo: "Transparent menu over slider hero section",
+    link: "https://kuzminapolina.github.io/Travels/",
   },
 ];
 
@@ -49,9 +53,9 @@ const Single = ({ project }) => {
 
   return (
     <div className="h-[90vh]">
-      <div className="container flex items-center justify-center w-[100%] h-[100%] overflow-hidden">
+      <div className="container flex items-center justify-center w-[100%] h-[100%] overflow-hidden m-auto">
         <div
-          className="wrapper h-[100%] m-auto flex items-center justify-center gap-[80px]"
+          className="wrapper w-fit md:w-[80%] lg:w-fit h-[100%] flex items-center justify-center gap-[80px]"
           ref={ref}
         >
           <motion.div
@@ -69,7 +73,7 @@ const Single = ({ project }) => {
             className="textContainer flex flex-col gap-[30px] flex-1 z-0"
             style={{ x: rtl }}
           >
-            <h3 className="font-menu font-extrabold uppercase text-[60px] py-2 md:block hidden">
+            <h3 className="font-menu font-extrabold uppercase text-[60px] py-2">
               {project.title}
             </h3>
             <ul className="list-disc pl-[20px]">
@@ -77,6 +81,12 @@ const Single = ({ project }) => {
               <li>{project.stack}</li>
               <li>{project.additionalInfo}</li>
             </ul>
+            <a
+              href={project.link}
+              className="font-menu text-[30px] h-10 px-5 link-button text-white w-fit"
+            >
+              Show me the website!
+            </a>
           </motion.div>
         </div>
       </div>
@@ -97,8 +107,8 @@ const Portfolio = () => {
   });
   return (
     <section className="relative bg-slate-50" ref={ref} scroll-snap>
-      <div className="progress sticky top-0 left-0 pt-[50px] text-center overflow-hidden bg-slate-50 z-10">
-        <h2 className="font-header text-[80px] text-center pb-8">Portfolio</h2>
+      <div className="progress sticky top-0 left-0 bottom-0 pt-[50px] text-center overflow-hidden bg-slate-50 z-10">
+        <h2 className="font-header text-[80px] text-center">Portfolio</h2>
         <motion.div
           style={{ scaleX }}
           className="progressBar h-[10px] colorful-gradient"

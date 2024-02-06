@@ -21,7 +21,7 @@ const Resume = () => {
     >
       <motion.a
         href="#"
-        className="font-menu font-extrabold uppercase text-[60px] absolute p-4 menu md:block hidden outline-text"
+        className="font-menu font-extrabold uppercase text-[50px] lg:text-[60px] absolute p-4 menu md:block hidden outline-text"
         style={{ y: moveText }}
       >
         My resume (CV)
