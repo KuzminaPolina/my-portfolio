@@ -16,7 +16,7 @@ const Resume = () => {
   const moveBarBack = useTransform(scrollYProgress, [0, 1], ["0%", "-100%"]);
   return (
     <section
-      className="relative flex h-[100vh] w-[100%] md:h-[90vh] justify-center items-center overflow-hidden bg-slate-50"
+      className="relative flex h-[80vh] w-[100%] md:h-[90vh] justify-center items-center overflow-hidden bg-slate-50"
       ref={ref}
     >
       <motion.a
@@ -28,7 +28,7 @@ const Resume = () => {
       </motion.a>
       <a
         href="#"
-        className="font-menu uppercase text-[50px] absolute p-4 menu md:hidden block"
+        className="font-menu uppercase text-[40px] absolute p-4 menu md:hidden block"
       >
         My resume (CV)
       </a>
@@ -54,7 +54,7 @@ const Resume = () => {
       ></motion.div>
       <div
         className="md:hidden crow-bg-top"
-        style={{ top: "150px", width: "150px" }}
+        style={{ top: "200px", width: "150px" }}
       ></div>
       <motion.div
         className="crow-bg-bottom md:block hidden"
@@ -62,7 +62,7 @@ const Resume = () => {
       ></motion.div>
       <div
         className="md:hidden crow-bg-bottom"
-        style={{ bottom: "50px", width: "150px" }}
+        style={{ bottom: "100px", width: "150px" }}
       ></div>
     </section>
   );

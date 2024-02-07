@@ -21,9 +21,12 @@ import gitIcon from "./git-icon.png";
 import linkedin from "./linkedin-icon.png";
 import crowUp from "./crow-wings-up.png";
 import crowDown from "./crow-wings-down.png";
-import sedona from "./SedonaXS.jpg";
-import gym from "./gymXS.jpg";
-import travels from "./travelsXS.jpg";
+import sedonaMobile from "./website_screens/SedonaVertical_mobile.jpg";
+import sedonaDesktop from "./website_screens/Sedona_tablet_desktop.jpg";
+import gymMobile from "./website_screens/gym_mobile.jpg";
+import gymDesktop from "./website_screens/gym_tablet_desktop.jpg";
+import travelsMobile from "./website_screens/travels_mobile.jpg";
+import travelsDesktop from "./website_screens/travels_tablet_desktop.jpg";
 
 export {
   quotes,
@@ -49,7 +52,10 @@ export {
   linkedin,
   crowUp,
   crowDown,
-  gym,
-  sedona,
-  travels,
+  gymMobile,
+  gymDesktop,
+  sedonaMobile,
+  sedonaDesktop,
+  travelsMobile,
+  travelsDesktop,
 };

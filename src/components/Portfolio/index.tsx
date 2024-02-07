@@ -1,11 +1,19 @@
 import React from "react";
-import { sedona, gym, travels } from "../../assets";
+import {
+  sedonaMobile,
+  sedonaDesktop,
+  gymMobile,
+  gymDesktop,
+  travelsMobile,
+  travelsDesktop,
+} from "../../assets";
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 
 const projects: {
   id: number;
   title: string;
-  img: string;
+  img_mobile: string;
+  img_desktop: string;
   feature: string;
   stack: string;
   additionalInfo: string;
@@ -14,7 +22,8 @@ const projects: {
   {
     id: 1,
     title: "Sedona",
-    img: sedona,
+    img_mobile: sedonaMobile,
+    img_desktop: sedonaDesktop,
     feature: "Adaptive website",
     stack: "HTML, CSS, LESS, Gulp, JavaScript",
     additionalInfo: "All pages clickable",
@@ -23,7 +32,8 @@ const projects: {
   {
     id: 2,
     title: "Gym",
-    img: gym,
+    img_mobile: gymMobile,
+    img_desktop: gymDesktop,
     feature: "Fully responsive landing page",
     stack: "HTML, CSS, SASS, Gulp, Javascript",
     additionalInfo: "Responsive sliders",
@@ -32,7 +42,8 @@ const projects: {
   {
     id: 3,
     title: "Travels",
-    img: travels,
+    img_mobile: travelsMobile,
+    img_desktop: travelsDesktop,
     feature: "Fully responsive landing page",
     stack: "HTML, CSS, SASS, Gulp, Javascript",
     additionalInfo: "Transparent menu over slider hero section",
@@ -55,19 +66,22 @@ const Single = ({ project }) => {
     <div className="h-[90vh]">
       <div className="container flex items-center justify-center w-[100%] h-[100%] overflow-hidden m-auto">
         <div
-          className="wrapper w-fit md:w-[80%] lg:w-fit h-[100%] flex items-center justify-center gap-[80px]"
+          className="wrapper w-fit md:w-[80%] lg:w-fit h-[100%] flex flex-col md:flex-row items-center justify-center gap-[80px]"
           ref={ref}
         >
           <motion.div
             className="imgContainer flex-1 max-h-[500px]"
             style={{ x: ltr }}
           >
-            <img
-              src={project.img}
-              alt="handpainted website screenshot"
-              width="700"
-              className="object-cover h-[100%] w-[100%]"
-            />
+            <picture>
+              <source media="(min-width: 768px)" srcSet={project.img_desktop} />
+              <img
+                src={project.img_mobile}
+                alt="handpainted website screenshot"
+                width="700"
+                className="object-cover h-[100%] w-[100%]"
+              />
+            </picture>
           </motion.div>
           <motion.div
             className="textContainer flex flex-col gap-[30px] flex-1 z-0"
