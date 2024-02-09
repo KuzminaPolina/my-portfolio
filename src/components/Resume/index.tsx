@@ -20,14 +20,16 @@ const Resume = () => {
       ref={ref}
     >
       <motion.a
-        href="#"
+        href="https://drive.google.com/file/d/1PtcrYBtjl-KbMHMZgxgNl03TBokj0Nqm/view?usp=drive_link"
+        target="_blank"
         className="font-menu font-extrabold uppercase text-[50px] lg:text-[60px] absolute p-4 menu md:block hidden outline-text"
         style={{ y: moveText }}
       >
         My resume (CV)
       </motion.a>
       <a
-        href="#"
+        href="https://drive.google.com/file/d/1PtcrYBtjl-KbMHMZgxgNl03TBokj0Nqm/view?usp=drive_link"
+        target="_blank"
         className="font-menu uppercase text-[40px] absolute p-4 menu md:hidden block"
       >
         My resume (CV)

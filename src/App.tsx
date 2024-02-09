@@ -28,8 +28,8 @@ function App() {
         <Resume />
         <Portfolio />
         <About />
-        <Contacts />
         <Game />
+        <Contacts />
       </main>
 
       <footer className={`bg-slate-50`}>

@@ -27,6 +27,22 @@ import gymMobile from "./website_screens/gym_mobile.jpg";
 import gymDesktop from "./website_screens/gym_tablet_desktop.jpg";
 import travelsMobile from "./website_screens/travels_mobile.jpg";
 import travelsDesktop from "./website_screens/travels_tablet_desktop.jpg";
+import chan from "./game/chan.jpg";
+import binnie from "./game/binnie.jpg";
+import han from "./game/han.jpg";
+import minho from "./game/leebit.jpg";
+import hyunjin from "./game/jinret.jpg";
+import puppy from "./game/puppy.jpg";
+import felix from "./game/sunshine.jpg";
+import innie from "./game/INnie.jpg";
+import hongjoong from "./game/JJOONGrami-300.jpg";
+import seonghwa from "./game/DDEONGbyeoli-300.jpg";
+import san from "./game/SANdeoki-300.jpg";
+import woo from "./game/WOOYOnyang-300.jpg";
+import yeo from "./game/HETmongi-300.jpg";
+import mingi from "./game/bbyongMING-300.jpg";
+import yunho from "./game/TYUdeongi-300.jpg";
+import jongho from "./game/JJONGbear-300.jpg";
 
 export {
   quotes,
@@ -58,4 +74,20 @@ export {
   sedonaDesktop,
   travelsMobile,
   travelsDesktop,
+  chan,
+  binnie,
+  han,
+  minho,
+  hyunjin,
+  puppy,
+  felix,
+  innie,
+  hongjoong,
+  seonghwa,
+  san,
+  woo,
+  yeo,
+  mingi,
+  yunho,
+  jongho,
 };

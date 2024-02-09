@@ -47,28 +47,28 @@ const About = () => {
           </p>
         </motion.div>
         <div className="md:w-1/2 block md:hidden">
-          <h2 className="font-header text-[80px] text-right mb-8">
+          <h2 className="font-header text-[60px] md:text-[80px] text-right mb-8">
             Hard skills
           </h2>
-          <h3 className="font-menu2 uppercase text-[28px] mb-4 text-right">
+          <h3 className="font-menu2 uppercase text-[24px] mb-4 text-right">
             Main languages:
           </h3>
-          <p className="font-poppins text-[24px] mb-10 text-right">
+          <p className="font-poppins text-[20px] mb-10 text-right">
             JavaScript, <br />
             TypeScript
           </p>
-          <h3 className="font-menu2 uppercase text-[28px] mb-4 text-right">
+          <h3 className="font-menu2 uppercase text-[24px] mb-4 text-right">
             Front-end techs I worked with:
           </h3>
-          <p className="font-poppins text-[24px] mb-10 text-right">
+          <p className="font-poppins text-[20px] mb-10 text-right">
             HTML5, CSS3, LESS/SASS, Tailwind,
             <br />
             React, Gulp, Vite, Git
           </p>
-          <h3 className="font-menu2 uppercase text-[28px] mb-4 text-right">
+          <h3 className="font-menu2 uppercase text-[24px] mb-4 text-right">
             Speaking languages:
           </h3>
-          <p className="font-poppins text-[24px] mb-10 text-right">
+          <p className="font-poppins text-[20px] mb-10 text-right">
             Russian (Native),
             <br />
             English (IELTS 8.0/C1),
@@ -94,19 +94,21 @@ const About = () => {
           </p>
         </motion.div>
         <div className="md:w-1/2 block md:hidden">
-          <h2 className="font-header text-[80px] mb-8">Soft skills</h2>
-          <h3 className="font-menu2 uppercase text-[28px] mb-4">Experience:</h3>
-          <p className="font-poppins text-[24px] mb-10 max-w-[370px]">
+          <h2 className="font-header text-[60px] md:text-[80px] mb-8">
+            Soft skills
+          </h2>
+          <h3 className="font-menu2 uppercase text-[24px] mb-4">Experience:</h3>
+          <p className="font-poppins text-[20px] mb-10 max-w-[370px]">
             Teamwork, international teams, management positions
           </p>
-          <h3 className="font-menu2 uppercase text-[28px] mb-4">
+          <h3 className="font-menu2 uppercase text-[24px] mb-4">
             Personal qualities:
           </h3>
-          <p className="font-poppins text-[24px] mb-10">
+          <p className="font-poppins text-[20px] mb-10">
             Inquisitive, responsible, initiative, love learning new things
           </p>
-          <h3 className="font-menu2 uppercase text-[28px] mb-4">Hobbies:</h3>
-          <p className="font-poppins text-[24px] mb-10 max-w-[370px]">
+          <h3 className="font-menu2 uppercase text-[24px] mb-4">Hobbies:</h3>
+          <p className="font-poppins text-[20px] mb-10 max-w-[370px]">
             Drawing, dancing, hiking and seeing nature.
           </p>
         </div>
