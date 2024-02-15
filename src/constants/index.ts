@@ -9,6 +9,22 @@ import {
   gymDesktop,
   travelsMobile,
   travelsDesktop,
+  chan,
+  binnie,
+  han,
+  minho,
+  hyunjin,
+  puppy,
+  felix,
+  innie,
+  hongjoong,
+  seonghwa,
+  san,
+  woo,
+  yeo,
+  mingi,
+  yunho,
+  jongho,
 } from "../assets";
 
 export const navLinks = [
@@ -96,5 +112,94 @@ export const projects: {
     stack: "HTML, CSS, SASS, Gulp, Javascript",
     additionalInfo: "Transparent menu over slider hero section",
     link: "https://kuzminapolina.github.io/Travels/",
+  },
+];
+
+interface Card {
+  id: string;
+  img: string;
+  isOpen: boolean;
+}
+
+export const picsCollection: Array<Card> = [
+  {
+    id: "1",
+    img: chan,
+    isOpen: true,
+  },
+  {
+    id: "2",
+    img: binnie,
+    isOpen: true,
+  },
+  {
+    id: "3",
+    img: han,
+    isOpen: true,
+  },
+  {
+    id: "4",
+    img: minho,
+    isOpen: true,
+  },
+  {
+    id: "5",
+    img: hyunjin,
+    isOpen: true,
+  },
+  {
+    id: "6",
+    img: puppy,
+    isOpen: true,
+  },
+  {
+    id: "7",
+    img: felix,
+    isOpen: true,
+  },
+  {
+    id: "8",
+    img: innie,
+    isOpen: true,
+  },
+  {
+    id: "9",
+    img: hongjoong,
+    isOpen: true,
+  },
+  {
+    id: "10",
+    img: seonghwa,
+    isOpen: true,
+  },
+  {
+    id: "11",
+    img: san,
+    isOpen: true,
+  },
+  {
+    id: "12",
+    img: woo,
+    isOpen: true,
+  },
+  {
+    id: "13",
+    img: yeo,
+    isOpen: true,
+  },
+  {
+    id: "14",
+    img: mingi,
+    isOpen: true,
+  },
+  {
+    id: "15",
+    img: yunho,
+    isOpen: true,
+  },
+  {
+    id: "16",
+    img: jongho,
+    isOpen: true,
   },
 ];

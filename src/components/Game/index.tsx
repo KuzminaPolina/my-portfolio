@@ -1,22 +1,5 @@
 import { v4 as uuidv } from "uuid";
-import {
-  chan,
-  binnie,
-  han,
-  minho,
-  hyunjin,
-  puppy,
-  felix,
-  innie,
-  hongjoong,
-  seonghwa,
-  san,
-  woo,
-  yeo,
-  mingi,
-  yunho,
-  jongho,
-} from "../../assets";
+import { picsCollection } from "../../constants";
 
 interface Card {
   id: string;
@@ -24,108 +7,10 @@ interface Card {
   isOpen: boolean;
 }
 
-const picsObject: Array<Card> = [
-  {
-    id: "1",
-    img: chan,
-    isOpen: true,
-  },
-  {
-    id: "2",
-    img: binnie,
-    isOpen: true,
-  },
-  {
-    id: "3",
-    img: han,
-    isOpen: true,
-  },
-  {
-    id: "4",
-    img: minho,
-    isOpen: true,
-  },
-  {
-    id: "5",
-    img: hyunjin,
-    isOpen: true,
-  },
-  {
-    id: "6",
-    img: puppy,
-    isOpen: true,
-  },
-  {
-    id: "7",
-    img: felix,
-    isOpen: true,
-  },
-  {
-    id: "8",
-    img: innie,
-    isOpen: true,
-  },
-  {
-    id: "9",
-    img: hongjoong,
-    isOpen: true,
-  },
-  {
-    id: "10",
-    img: seonghwa,
-    isOpen: true,
-  },
-  {
-    id: "11",
-    img: san,
-    isOpen: true,
-  },
-  {
-    id: "12",
-    img: woo,
-    isOpen: true,
-  },
-  {
-    id: "13",
-    img: yeo,
-    isOpen: true,
-  },
-  {
-    id: "14",
-    img: mingi,
-    isOpen: true,
-  },
-  {
-    id: "15",
-    img: yunho,
-    isOpen: true,
-  },
-  {
-    id: "16",
-    img: jongho,
-    isOpen: true,
-  },
-];
-
 let finalGameSet: Array<Card> = [];
+let isGameInitialized: boolean = false;
 
-const randomizeCards = (array: Array<Card>) => {
-  const randomizedArray: Array<Card> = [];
-
-  const guardian = new Set();
-  while (randomizedArray.length < 16) {
-    const randomNo = Math.floor(Math.random() * array.length);
-    if (guardian.has(randomNo)) {
-      continue;
-    }
-    const newEl = array[randomNo];
-    guardian.add(randomNo);
-    randomizedArray.push(newEl);
-  }
-  return randomizedArray;
-};
-
-const pickRandomPics = (array: Array<Card>) => {
+const pickRandomCardsFromCollection = (array: Array<Card>) => {
   const newArray: Array<Card> = [];
 
   const guardian = new Set();
@@ -142,21 +27,37 @@ const pickRandomPics = (array: Array<Card>) => {
   return newArray;
 };
 
+const randomizeSelectedCards = (array: Array<Card>) => {
+  const randomizedArray: Array<Card> = [];
+
+  const guardian = new Set();
+  while (randomizedArray.length < 16) {
+    const randomNo = Math.floor(Math.random() * array.length);
+    if (guardian.has(randomNo)) {
+      continue;
+    }
+    const newEl = array[randomNo];
+    guardian.add(randomNo);
+    randomizedArray.push(newEl);
+  }
+  return randomizedArray;
+};
+
+const saveToLocal = (array: Array<Card>) => {
+  localStorage.setItem("initialCards", JSON.stringify(array));
+};
+
 const setGame = () => {
-  const selectCardsFromCollection: Array<Card> = pickRandomPics(picsObject);
-  const randomizeSelectedCards: Array<Card> = randomizeCards(
+  const selectCardsFromCollection: Array<Card> =
+    pickRandomCardsFromCollection(picsCollection);
+  const randomizedCards: Array<Card> = randomizeSelectedCards(
     selectCardsFromCollection
   );
-  const randomizeSelectedCardsIDs: Array<Card> = randomizeSelectedCards.map(
-    (card) => {
-      const newID = uuidv();
-      return { ...card, id: newID.toString(), isOpen: true };
-    }
-  );
-  localStorage.setItem(
-    "initialCards",
-    JSON.stringify(randomizeSelectedCardsIDs)
-  );
+  const randomizeSelectedCardsIDs: Array<Card> = randomizedCards.map((card) => {
+    const newID = uuidv();
+    return { ...card, id: newID.toString(), isOpen: true };
+  });
+  saveToLocal(randomizeSelectedCardsIDs);
   finalGameSet = randomizeSelectedCardsIDs;
   return finalGameSet;
 };
