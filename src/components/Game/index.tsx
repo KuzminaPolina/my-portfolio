@@ -1,5 +1,6 @@
 import { v4 as uuidv } from "uuid";
 import { picsCollection } from "../../constants";
+import React, { useState } from "react";
 
 interface Card {
   id: string;
@@ -8,7 +9,8 @@ interface Card {
 }
 
 let finalGameSet: Array<Card> = [];
-let isGameInitialized: boolean = false;
+/* let isGameInitialized: boolean = false;
+let selectedItemId: string | null = null; */
 
 const pickRandomCardsFromCollection = (array: Array<Card>) => {
   const newArray: Array<Card> = [];
@@ -55,10 +57,10 @@ const setGame = () => {
   );
   const randomizeSelectedCardsIDs: Array<Card> = randomizedCards.map((card) => {
     const newID = uuidv();
-    return { ...card, id: newID.toString(), isOpen: true };
+    return { ...card, id: newID.toString() };
   });
-  saveToLocal(randomizeSelectedCardsIDs);
   finalGameSet = randomizeSelectedCardsIDs;
+  saveToLocal(randomizeSelectedCardsIDs);
   return finalGameSet;
 };
 
@@ -75,38 +77,48 @@ const retrieveFromLocal = () => {
 
 const clearLocalStorage = () => {
   localStorage.removeItem("initialCards");
-  setGame();
-};
-
-const Cards = () => {
-  const handleClick = (event: React.MouseEvent<HTMLElement>) => {
-    console.log(event);
-  };
-  retrieveFromLocal();
-
-  return (
-    <>
-      {finalGameSet.map((card) => {
-        return (
-          <div
-            style={{
-              background: `${card.isOpen}`
-                ? `url(${card.img}) center/200px 200px`
-                : "#000000",
-              width: "200px",
-              height: "200px",
-              borderRadius: "12px",
-            }}
-            key={card.id}
-            onClick={handleClick}
-          ></div>
-        );
-      })}
-    </>
-  );
 };
 
 const Game = () => {
+  retrieveFromLocal();
+  const [cards, setCards] = React.useState(finalGameSet);
+
+  const handleClick = (id: string) => {
+    setCards((oldCards) => {
+      const newArray = [];
+      for (let i = 0; i < oldCards.length; i++) {
+        if (oldCards[i].id === id) {
+          const newCard = {
+            ...oldCards[i],
+            isOpen: !oldCards[i].isOpen,
+          };
+          newArray.push(newCard);
+        } else {
+          newArray.push(oldCards[i]);
+        }
+      }
+      return newArray;
+    });
+  };
+
+  const cardsEls = cards.map((card) => {
+    return (
+      <div
+        style={{
+          background: card.isOpen
+            ? `url(${card.img}) center/200px 200px`
+            : "#000000",
+          width: "200px",
+          height: "200px",
+          borderRadius: "12px",
+        }}
+        key={card.id}
+        id={card.id}
+        onClick={() => handleClick(card.id)}
+      ></div>
+    );
+  });
+
   return (
     <section>
       <div className="container flex flex-col items-center justify-between">
@@ -129,7 +141,7 @@ const Game = () => {
         </div>
         <div className="game-wrapper">
           <div className="gamefield grid grid-cols-4 grid-rows-4 gap-1">
-            <Cards />
+            {cardsEls}
           </div>
         </div>
       </div>
