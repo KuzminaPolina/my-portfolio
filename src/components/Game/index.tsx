@@ -1,6 +1,6 @@
 import { v4 as uuidv } from "uuid";
 import { picsCollection } from "../../constants";
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 
 interface Card {
   id: string;
@@ -79,24 +79,60 @@ const clearLocalStorage = () => {
   localStorage.removeItem("initialCards");
 };
 
+/* const compare = (array: Array<Card>) => {
+  const openEls = array.filter((item) => item.isOpen);
+  console.log(openEls);
+  const firstEl = openEls[0];
+  const secondEl = openEls[1];
+  console.log(firstEl);
+  console.log(secondEl);
+  if (firstEl.img === secondEl.img) {
+    const result = array.map((card) => {
+      return card.id === firstEl.id || card.id === secondEl.id
+        ? { ...card, isOpen: true }
+        : card;
+    });
+    return result;
+  } else {
+    const result = array.map((card) => {
+      return card.id === firstEl.id || card.id === secondEl.id
+        ? { ...card, isOpen: false }
+        : card;
+    });
+    return result;
+  }
+}; */
+
+let openCounter = 1;
+let areCardsSame: boolean = false;
+let lastSavedState: Array<Card> = [];
+
 const Game = () => {
   retrieveFromLocal();
   const [cards, setCards] = React.useState(finalGameSet);
 
+  useEffect(() => {
+    if (openCounter < 3) {
+      return;
+    }
+    console.log("Effect:");
+    console.log(cards);
+  }, [cards]);
+
+  //if Open cards same(true) => SetCards(updatedArray)
+  //if Open Cards different(false) => SetCards(previousVersionofArray)
+
   const handleClick = (id: string) => {
+    openCounter = openCounter + 1;
+
     setCards((oldCards) => {
-      const newArray = [];
-      for (let i = 0; i < oldCards.length; i++) {
-        if (oldCards[i].id === id) {
-          const newCard = {
-            ...oldCards[i],
-            isOpen: !oldCards[i].isOpen,
-          };
-          newArray.push(newCard);
-        } else {
-          newArray.push(oldCards[i]);
-        }
-      }
+      lastSavedState = oldCards;
+      console.log("Form setCards:");
+      console.log(lastSavedState);
+
+      const newArray = oldCards.map((card) => {
+        return card.id === id ? { ...card, isOpen: !card.isOpen } : card;
+      });
       return newArray;
     });
   };
@@ -107,7 +143,7 @@ const Game = () => {
         style={{
           background: card.isOpen
             ? `url(${card.img}) center/200px 200px`
-            : "#000000",
+            : "#ffe6ea",
           width: "200px",
           height: "200px",
           borderRadius: "12px",
