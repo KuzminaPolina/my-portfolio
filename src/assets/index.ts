@@ -43,6 +43,7 @@ import yeo from "./game/HETmongi-300.jpg";
 import mingi from "./game/bbyongMING-300.jpg";
 import yunho from "./game/TYUdeongi-300.jpg";
 import jongho from "./game/JJONGbear-300.jpg";
+import crowSound from "../assets/awkward_crow_silence.mp3";
 
 export {
   quotes,
@@ -74,6 +75,7 @@ export {
   sedonaDesktop,
   travelsMobile,
   travelsDesktop,
+  crowSound,
   chan,
   binnie,
   han,

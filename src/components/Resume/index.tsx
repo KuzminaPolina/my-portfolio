@@ -1,4 +1,5 @@
 import React from "react";
+import { crowSound } from "../../assets";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 const Resume = () => {
@@ -14,6 +15,11 @@ const Resume = () => {
 
   const moveCrowBack = useTransform(scrollYProgress, [0, 1], ["0", "-600%"]);
   const moveBarBack = useTransform(scrollYProgress, [0, 1], ["0%", "-100%"]);
+
+  function play() {
+    new Audio(crowSound).play();
+  }
+
   return (
     <section
       className="relative flex h-[80vh] w-[100%] md:h-[90vh] justify-center items-center overflow-hidden bg-slate-50"
@@ -53,6 +59,9 @@ const Resume = () => {
       <motion.div
         className="crow-bg-top md:block hidden"
         style={{ x: moveCrow }}
+        onHoverStart={() => {
+          play();
+        }}
       ></motion.div>
       <div
         className="md:hidden crow-bg-top"
@@ -61,6 +70,9 @@ const Resume = () => {
       <motion.div
         className="crow-bg-bottom md:block hidden"
         style={{ x: moveCrowBack }}
+        onHoverStart={() => {
+          play();
+        }}
       ></motion.div>
       <div
         className="md:hidden crow-bg-bottom"
