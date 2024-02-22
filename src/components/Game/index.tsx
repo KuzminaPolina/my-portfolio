@@ -1,6 +1,6 @@
 import { v4 as uuidv } from "uuid";
 import { picsCollection } from "../../constants";
-import React, { useEffect } from "react";
+import { useState } from "react";
 
 interface Card {
   id: string;
@@ -8,9 +8,7 @@ interface Card {
   isOpen: boolean;
 }
 
-let finalGameSet: Array<Card> = [];
-/* let isGameInitialized: boolean = false;
-let selectedItemId: string | null = null; */
+let finalGameSet: Card[] = [];
 
 const pickRandomCardsFromCollection = (array: Array<Card>) => {
   const newArray: Array<Card> = [];
@@ -79,62 +77,52 @@ const clearLocalStorage = () => {
   localStorage.removeItem("initialCards");
 };
 
-/* const compare = (array: Array<Card>) => {
-  const openEls = array.filter((item) => item.isOpen);
-  console.log(openEls);
-  const firstEl = openEls[0];
-  const secondEl = openEls[1];
-  console.log(firstEl);
-  console.log(secondEl);
-  if (firstEl.img === secondEl.img) {
-    const result = array.map((card) => {
-      return card.id === firstEl.id || card.id === secondEl.id
-        ? { ...card, isOpen: true }
-        : card;
-    });
-    return result;
-  } else {
-    const result = array.map((card) => {
-      return card.id === firstEl.id || card.id === secondEl.id
-        ? { ...card, isOpen: false }
-        : card;
-    });
-    return result;
-  }
-}; */
-
-let openCounter = 1;
-let areCardsSame: boolean = false;
-let lastSavedState: Array<Card> = [];
+let openCards: Array<Card> = [];
+//let areCardsSimilar: boolean = false;
 
 const Game = () => {
   retrieveFromLocal();
-  const [cards, setCards] = React.useState(finalGameSet);
-
-  useEffect(() => {
-    if (openCounter < 3) {
-      return;
-    }
-    console.log("Effect:");
-    console.log(cards);
-  }, [cards]);
-
-  //if Open cards same(true) => SetCards(updatedArray)
-  //if Open Cards different(false) => SetCards(previousVersionofArray)
+  const [cards, setCards] = useState(finalGameSet);
+  const [openCounter, setOpenCounter] = useState(0);
+  //const [openCardsState, setOpenCards] = useState(openCardsArray);
+  const [areCardsSame, setAreCardsSame] = useState(false);
 
   const handleClick = (id: string) => {
-    openCounter = openCounter + 1;
-
+    const fieldBeforeTwoCardsOened = cards;
+    setOpenCounter(openCounter + 1);
     setCards((oldCards) => {
-      lastSavedState = oldCards;
-      console.log("Form setCards:");
-      console.log(lastSavedState);
-
       const newArray = oldCards.map((card) => {
         return card.id === id ? { ...card, isOpen: !card.isOpen } : card;
       });
+
       return newArray;
     });
+
+    const fieldAfterTwoCardsOpened = cards;
+
+    const openEl = cards.find((card) => {
+      return card.id === id;
+    });
+    if (openEl === undefined) {
+      throw new TypeError("where the hell is my card");
+    }
+    openCards.push(openEl);
+
+    if (openCards.length === 2) {
+      const elOne = openCards[0];
+      const elTwo = openCards[1];
+      if (elOne.img === elTwo.img) {
+        console.log("imgs are same");
+        setAreCardsSame(true);
+      } else {
+        console.log("imgs are diff");
+        setAreCardsSame(false);
+      }
+    } else if (openCounter > 2) {
+      setCards(fieldAfterTwoCardsOpened);
+      openCards = [];
+      setOpenCounter(0);
+    }
   };
 
   const cardsEls = cards.map((card) => {
