@@ -83,13 +83,11 @@ let openCards: Array<Card> = [];
 const Game = () => {
   retrieveFromLocal();
   const [cards, setCards] = useState(finalGameSet);
-  const [openCounter, setOpenCounter] = useState(0);
   //const [openCardsState, setOpenCards] = useState(openCardsArray);
-  const [areCardsSame, setAreCardsSame] = useState(false);
+  //const [areCardsSame, setAreCardsSame] = useState(false);
 
   const handleClick = (id: string) => {
-    const fieldBeforeTwoCardsOened = cards;
-    setOpenCounter(openCounter + 1);
+    const fieldBeforeTwoCardsOpened = cards;
     setCards((oldCards) => {
       const newArray = oldCards.map((card) => {
         return card.id === id ? { ...card, isOpen: !card.isOpen } : card;
@@ -97,8 +95,6 @@ const Game = () => {
 
       return newArray;
     });
-
-    const fieldAfterTwoCardsOpened = cards;
 
     const openEl = cards.find((card) => {
       return card.id === id;
@@ -111,19 +107,37 @@ const Game = () => {
     if (openCards.length === 2) {
       const elOne = openCards[0];
       const elTwo = openCards[1];
+
       if (elOne.img === elTwo.img) {
         console.log("imgs are same");
-        setAreCardsSame(true);
+        openCards = [];
       } else {
         console.log("imgs are diff");
-        setAreCardsSame(false);
+        const arrayForDiffImgs = cards.map((card) => {
+          return card.id === elOne.id ? { ...card, isOpen: false } : card;
+        });
+        setTimeout(() => {
+          setCards(arrayForDiffImgs);
+        }, 1000);
+        openCards = [];
       }
-    } else if (openCounter > 2) {
-      setCards(fieldAfterTwoCardsOpened);
+    }
+
+    if (openCards.length > 2) {
+      setCards(fieldBeforeTwoCardsOpened);
       openCards = [];
-      setOpenCounter(0);
     }
   };
+
+  //1. Сохраням в переменную оригинальное состояние поля до открытия очередной пары карт, состояние 1.
+  //2. Открываем карту, записываем в массив открытых
+  //3. Открываем карту опять, записываем в массив открытых
+  //4. Как только длина массива откртых становится равна 2, триггерим сравнение
+  //5. Здесь надо как-то записать в массив состояние поля с 2мя открытыми картами, точно не знаю, где, но нужно запомнить это состояние, состояние 2.
+  //6. Сравнить две карты.
+  //7. Если они равны, делаем setCards(состояние 2), т.к. оно верное
+  //8. Если они не равны, делаем setCards(состояние 1), т.е то, которое было до открытия двух карт.
+  //9. Если массив открытых карт больше 3, делаем снова setCards(состояние 1)
 
   const cardsEls = cards.map((card) => {
     return (
