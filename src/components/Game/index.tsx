@@ -9,6 +9,7 @@ interface Card {
 }
 
 let finalGameSet: Card[] = [];
+let openCards: Array<Card> = [];
 
 const pickRandomCardsFromCollection = (array: Array<Card>) => {
   const newArray: Array<Card> = [];
@@ -73,21 +74,19 @@ const retrieveFromLocal = () => {
   }
 };
 
-const clearLocalStorage = () => {
-  localStorage.removeItem("initialCards");
-};
-
-let openCards: Array<Card> = [];
-//let areCardsSimilar: boolean = false;
-
 const Game = () => {
   retrieveFromLocal();
+
   const [cards, setCards] = useState(finalGameSet);
-  //const [openCardsState, setOpenCards] = useState(openCardsArray);
-  //const [areCardsSame, setAreCardsSame] = useState(false);
+
+  const clearLocalStorage = () => {
+    localStorage.removeItem("initialCards");
+    setGame();
+    const resetGame = retrieveFromLocal();
+    setCards(resetGame);
+  };
 
   const handleClick = (id: string) => {
-    const fieldBeforeTwoCardsOpened = cards;
     setCards((oldCards) => {
       const newArray = oldCards.map((card) => {
         return card.id === id ? { ...card, isOpen: !card.isOpen } : card;
@@ -109,24 +108,28 @@ const Game = () => {
       const elTwo = openCards[1];
 
       if (elOne.img === elTwo.img) {
-        console.log("imgs are same");
         openCards = [];
       } else {
-        console.log("imgs are diff");
         const arrayForDiffImgs = cards.map((card) => {
-          return card.id === elOne.id ? { ...card, isOpen: false } : card;
+          return card.id === elOne.id || card.id === elTwo.id
+            ? { ...card, isOpen: false }
+            : card;
         });
         setTimeout(() => {
           setCards(arrayForDiffImgs);
-        }, 1000);
+        }, 700);
         openCards = [];
       }
     }
 
-    if (openCards.length > 2) {
-      setCards(fieldBeforeTwoCardsOpened);
+    /* if (openCards.length > 2) {
+      const elThree = openCards[2];
+      const moreThanTwoOpen = cards.map((card) => {
+        return card.id === elThree.id ? { ...card, isOpen: false } : card;
+      });
+      setCards(moreThanTwoOpen);
       openCards = [];
-    }
+    } */
   };
 
   //1. Сохраням в переменную оригинальное состояние поля до открытия очередной пары карт, состояние 1.
@@ -174,7 +177,7 @@ const Game = () => {
             className="bg-slate-500 px-8 py-2 text-white rounded-xl"
             onClick={clearLocalStorage}
           >
-            Clear Game
+            Reset Game
           </button>
         </div>
         <div className="game-wrapper">
