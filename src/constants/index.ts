@@ -119,6 +119,7 @@ interface Card {
   id: string;
   img: string;
   isOpen: boolean;
+  isDisabled: boolean;
 }
 
 export const picsCollection: Array<Card> = [
@@ -126,80 +127,96 @@ export const picsCollection: Array<Card> = [
     id: "1",
     img: chan,
     isOpen: false,
+    isDisabled: false,
   },
   {
     id: "2",
     img: binnie,
     isOpen: false,
+    isDisabled: false,
   },
   {
     id: "3",
     img: han,
     isOpen: false,
+    isDisabled: false,
   },
   {
     id: "4",
     img: minho,
     isOpen: false,
+    isDisabled: false,
   },
   {
     id: "5",
     img: hyunjin,
     isOpen: false,
+    isDisabled: false,
   },
   {
     id: "6",
     img: puppy,
     isOpen: false,
+    isDisabled: false,
   },
   {
     id: "7",
     img: felix,
     isOpen: false,
+    isDisabled: false,
   },
   {
     id: "8",
     img: innie,
     isOpen: false,
+    isDisabled: false,
   },
   {
     id: "9",
     img: hongjoong,
     isOpen: false,
+    isDisabled: false,
   },
   {
     id: "10",
     img: seonghwa,
     isOpen: false,
+    isDisabled: false,
   },
   {
     id: "11",
     img: san,
     isOpen: false,
+    isDisabled: false,
   },
   {
     id: "12",
     img: woo,
     isOpen: false,
+    isDisabled: false,
   },
   {
     id: "13",
     img: yeo,
     isOpen: false,
+    isDisabled: false,
   },
   {
     id: "14",
     img: mingi,
     isOpen: false,
+    isDisabled: false,
   },
   {
     id: "15",
     img: yunho,
     isOpen: false,
+    isDisabled: false,
   },
   {
     id: "16",
     img: jongho,
     isOpen: false,
+    isDisabled: false,
   },
 ];

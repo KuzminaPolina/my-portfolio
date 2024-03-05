@@ -1,15 +1,15 @@
 import { v4 as uuidv } from "uuid";
 import { picsCollection } from "../../constants";
-import { useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 
 interface Card {
   id: string;
   img: string;
   isOpen: boolean;
+  isDisabled: boolean;
 }
 
 let finalGameSet: Card[] = [];
-let openCards: Array<Card> = [];
 
 const pickRandomCardsFromCollection = (array: Array<Card>) => {
   const newArray: Array<Card> = [];
@@ -78,20 +78,67 @@ const Game = () => {
   retrieveFromLocal();
 
   const [cards, setCards] = useState(finalGameSet);
+  const [openEls, setOpenEls] = useState<Card[]>([]);
+  const [result, setResult] = useState<Card[]>([]);
+  const [disabled, setDisabled] = useState<boolean>(false);
+
+  const disable = () => {
+    setDisabled(true);
+  };
+
+  const enable = () => {
+    setDisabled(false);
+  };
+
+  useEffect(() => {
+    if (result.length === finalGameSet.length) {
+      setTimeout(() => {
+        alert("Congratulations!");
+      }, 300);
+    }
+  }, [result]);
 
   const clearLocalStorage = () => {
+    setResult([]);
     localStorage.removeItem("initialCards");
     setGame();
     const resetGame = retrieveFromLocal();
     setCards(resetGame);
   };
 
+  const compare = useCallback(() => {
+    const elOne = openEls[0];
+    const elTwo = openEls[1];
+    //enable();
+    if (elOne.img === elTwo.img) {
+      setResult((prevResult) => [...prevResult, elOne, elTwo]);
+      setOpenEls([]);
+    } else {
+      const arrayForDiffImgs = cards.map((card) => {
+        return card.id === elOne.id || card.id === elTwo.id
+          ? { ...card, isOpen: false, isDisabled: false }
+          : card;
+      });
+      setTimeout(() => {
+        setCards(arrayForDiffImgs);
+      }, 700);
+      setOpenEls([]);
+    }
+  }, [cards, openEls]);
+
+  useEffect(() => {
+    if (openEls.length === 2) {
+      compare();
+    }
+  }, [openEls, compare]);
+
   const handleClick = (id: string) => {
     setCards((oldCards) => {
       const newArray = oldCards.map((card) => {
-        return card.id === id ? { ...card, isOpen: !card.isOpen } : card;
+        return card.id === id
+          ? { ...card, isOpen: !card.isOpen, isDisabled: true }
+          : card;
       });
-
       return newArray;
     });
 
@@ -101,46 +148,11 @@ const Game = () => {
     if (openEl === undefined) {
       throw new TypeError("where the hell is my card");
     }
-    openCards.push(openEl);
-
-    if (openCards.length === 2) {
-      const elOne = openCards[0];
-      const elTwo = openCards[1];
-
-      if (elOne.img === elTwo.img) {
-        openCards = [];
-      } else {
-        const arrayForDiffImgs = cards.map((card) => {
-          return card.id === elOne.id || card.id === elTwo.id
-            ? { ...card, isOpen: false }
-            : card;
-        });
-        setTimeout(() => {
-          setCards(arrayForDiffImgs);
-        }, 700);
-        openCards = [];
-      }
+    setOpenEls((prevOpenEls) => [...prevOpenEls, openEl]);
+    if (openEls.length === 2) {
+      disable();
     }
-
-    /* if (openCards.length > 2) {
-      const elThree = openCards[2];
-      const moreThanTwoOpen = cards.map((card) => {
-        return card.id === elThree.id ? { ...card, isOpen: false } : card;
-      });
-      setCards(moreThanTwoOpen);
-      openCards = [];
-    } */
   };
-
-  //1. Сохраням в переменную оригинальное состояние поля до открытия очередной пары карт, состояние 1.
-  //2. Открываем карту, записываем в массив открытых
-  //3. Открываем карту опять, записываем в массив открытых
-  //4. Как только длина массива откртых становится равна 2, триггерим сравнение
-  //5. Здесь надо как-то записать в массив состояние поля с 2мя открытыми картами, точно не знаю, где, но нужно запомнить это состояние, состояние 2.
-  //6. Сравнить две карты.
-  //7. Если они равны, делаем setCards(состояние 2), т.к. оно верное
-  //8. Если они не равны, делаем setCards(состояние 1), т.е то, которое было до открытия двух карт.
-  //9. Если массив открытых карт больше 3, делаем снова setCards(состояние 1)
 
   const cardsEls = cards.map((card) => {
     return (
@@ -155,7 +167,9 @@ const Game = () => {
         }}
         key={card.id}
         id={card.id}
-        onClick={() => handleClick(card.id)}
+        onClick={() => {
+          card.isDisabled || disabled ? null : handleClick(card.id);
+        }}
       ></div>
     );
   });
@@ -166,13 +180,10 @@ const Game = () => {
         <h2 className="font-header text-[60px] md:text-[80px] text-center">
           Play the game
         </h2>
-        <div className="controls-wrapper flex items-center justify-center gap-1 mb-7">
-          <button className="bg-slate-500 px-8 py-2 text-white rounded-xl">
-            Play
-          </button>
-          <button className="bg-slate-500 px-8 py-2 text-white rounded-xl">
-            Save
-          </button>
+        <p className="font-poppins text-[24px] mb-10 text-center">
+          Open all matching cards:
+        </p>
+        <div className="controls-wrapper flex items-center justify-end w-[45%] gap-1 mb-7">
           <button
             className="bg-slate-500 px-8 py-2 text-white rounded-xl"
             onClick={clearLocalStorage}
