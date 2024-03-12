@@ -74,6 +74,36 @@ const retrieveFromLocal = () => {
   }
 };
 
+const VictoryMsg = (props) => {
+  return (
+    <div className="bg-opacity-50 bg-white absolute top-0 left-0 w-full h-full flex place-content-center">
+      <div
+        className="flex flex-col justify-center py-5 absolute top-[40%] left-[25%] w-[50%] bg-rose-200 shadow-xl p-8"
+        style={{
+          borderRadius: "12px",
+          border: "solid 8px #ff7088",
+        }}
+      >
+        <p className="text-center font-poppins text-[24px] mb-10 text-white">
+          Congratulations! You won! Wanna try again?
+        </p>
+        <ResetButton onClick={props.onClick} text="Play Again" />
+      </div>
+    </div>
+  );
+};
+
+const ResetButton = (props) => {
+  return (
+    <button
+      className="colorful-gradient px-8 py-2 text-white rounded-xl"
+      onClick={props.onClick}
+    >
+      {props.text}
+    </button>
+  );
+};
+
 const Game = () => {
   retrieveFromLocal();
 
@@ -81,6 +111,7 @@ const Game = () => {
   const [openEls, setOpenEls] = useState<Card[]>([]);
   const [result, setResult] = useState<Card[]>([]);
   const [disabled, setDisabled] = useState<boolean>(false);
+  const [victory, setVictory] = useState<boolean>(false);
 
   const disable = () => {
     setDisabled(true);
@@ -93,8 +124,8 @@ const Game = () => {
   useEffect(() => {
     if (result.length === finalGameSet.length) {
       setTimeout(() => {
-        alert("Congratulations!");
-      }, 300);
+        setVictory(true);
+      }, 500);
     }
   }, [result]);
 
@@ -104,6 +135,7 @@ const Game = () => {
     setGame();
     const resetGame = retrieveFromLocal();
     setCards(resetGame);
+    setVictory(false);
   };
 
   const compare = useCallback(() => {
@@ -113,6 +145,7 @@ const Game = () => {
     if (elOne.img === elTwo.img) {
       setResult((prevResult) => [...prevResult, elOne, elTwo]);
       setOpenEls([]);
+      enable();
     } else {
       const arrayForDiffImgs = cards.map((card) => {
         return card.id === elOne.id || card.id === elTwo.id
@@ -121,6 +154,7 @@ const Game = () => {
       });
       setTimeout(() => {
         setCards(arrayForDiffImgs);
+        enable();
       }, 700);
       setOpenEls([]);
     }
@@ -128,11 +162,14 @@ const Game = () => {
 
   useEffect(() => {
     if (openEls.length === 2) {
+      disable();
       compare();
     }
   }, [openEls, compare]);
 
   const handleClick = (id: string) => {
+    if (disabled) return;
+
     setCards((oldCards) => {
       const newArray = oldCards.map((card) => {
         return card.id === id
@@ -181,20 +218,16 @@ const Game = () => {
           Play the game
         </h2>
         <p className="font-poppins text-[24px] mb-10 text-center">
-          Open all matching cards:
+          Find and open all matching cards:
         </p>
         <div className="controls-wrapper flex items-center justify-end w-[45%] gap-1 mb-7">
-          <button
-            className="bg-slate-500 px-8 py-2 text-white rounded-xl"
-            onClick={clearLocalStorage}
-          >
-            Reset Game
-          </button>
+          <ResetButton onClick={clearLocalStorage} text="Reset Game" />
         </div>
-        <div className="game-wrapper">
+        <div className="game-wrapper relative">
           <div className="gamefield grid grid-cols-4 grid-rows-4 gap-1">
             {cardsEls}
           </div>
+          {victory && <VictoryMsg onClick={clearLocalStorage} />}
         </div>
       </div>
     </section>
