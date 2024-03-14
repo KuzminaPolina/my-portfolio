@@ -44,6 +44,22 @@ import mingi from "./game/bbyongMING-300.jpg";
 import yunho from "./game/TYUdeongi-300.jpg";
 import jongho from "./game/JJONGbear-300.jpg";
 import crowSound from "../assets/awkward_crow_silence.mp3";
+import rewardChan from "./game/Bandmates/Bangchan.jpg";
+import rewardBin from "./game/Bandmates/Changbin.jpg";
+import rewardFelix from "./game/Bandmates/Felix.jpg";
+import rewardHan from "./game/Bandmates/Han.jpg";
+import rewardJoong from "./game/Bandmates/Hongjoong.jpg";
+import rewardHyunjin from "./game/Bandmates/Hyunjin.jpg";
+import rewardIN from "./game/Bandmates/Innie.jpg";
+import rewardJongho from "./game/Bandmates/Jongho.jpg";
+import rewardMingi from "./game/Bandmates/Mingi.jpg";
+import rewardSan from "./game/Bandmates/San.jpg";
+import rewardHwa from "./game/Bandmates/Seonghwa.jpg";
+import rewardMin from "./game/Bandmates/Seungmin.jpg";
+import rewardWoo from "./game/Bandmates/Wooyoung.jpg";
+import rewardYeosang from "./game/Bandmates/Yeosang.jpg";
+import rewardYunho from "./game/Bandmates/Yunho.jpg";
+import rewardMinho from "./game/Bandmates/leeknow.jpg";
 
 export {
   quotes,
@@ -92,4 +108,20 @@ export {
   mingi,
   yunho,
   jongho,
+  rewardChan,
+  rewardBin,
+  rewardFelix,
+  rewardHan,
+  rewardJoong,
+  rewardHyunjin,
+  rewardIN,
+  rewardJongho,
+  rewardMingi,
+  rewardSan,
+  rewardHwa,
+  rewardMin,
+  rewardWoo,
+  rewardYeosang,
+  rewardYunho,
+  rewardMinho,
 };

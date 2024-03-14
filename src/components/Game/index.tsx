@@ -1,5 +1,5 @@
 import { v4 as uuidv } from "uuid";
-import { picsCollection } from "../../constants";
+import { picsCollection, rewardArray } from "../../constants";
 import { useEffect, useState, useCallback } from "react";
 
 interface Card {
@@ -10,6 +10,11 @@ interface Card {
 }
 
 let finalGameSet: Card[] = [];
+
+const pickRandomRewardImg = () => {
+  const randomNo = Math.floor(Math.random() * rewardArray.length);
+  return rewardArray[randomNo].img;
+};
 
 const pickRandomCardsFromCollection = (array: Array<Card>) => {
   const newArray: Array<Card> = [];
@@ -74,20 +79,22 @@ const retrieveFromLocal = () => {
   }
 };
 
-const VictoryMsg = (props) => {
+const VictoryReward = (props) => {
+  const randomRewardImg = pickRandomRewardImg();
   return (
-    <div className="bg-opacity-50 bg-white absolute top-0 left-0 w-full h-full flex place-content-center">
-      <div
-        className="flex flex-col justify-center py-5 absolute top-[40%] left-[25%] w-[50%] bg-rose-200 shadow-xl p-8"
-        style={{
-          borderRadius: "12px",
-          border: "solid 8px #ff7088",
-        }}
-      >
-        <p className="text-center font-poppins text-[24px] mb-10 text-white">
-          Congratulations! You won! Wanna try again?
-        </p>
-        <ResetButton onClick={props.onClick} text="Play Again" />
+    <div className="absolute top-0 left-0 w-full h-full flex place-content-center">
+      <div className="relative w-full">
+        <img
+          src={randomRewardImg}
+          alt="Cute k-pop idol"
+          className="rounded-xl"
+        />
+        <div className="message absolute bottom-[10%] left-0 bg-[#ffffff88] w-full flex flex-col place-items-center  py-5">
+          <p className="text-center font-poppins text-[18px] ss:-[20px] md:text-[24px] text-black">
+            Congratulations! You won! Wanna go again?
+          </p>
+          <ResetButton onClick={props.onClick} text="Play Again" />
+        </div>
       </div>
     </div>
   );
@@ -96,7 +103,8 @@ const VictoryMsg = (props) => {
 const ResetButton = (props) => {
   return (
     <button
-      className="colorful-gradient px-8 py-2 text-white rounded-xl"
+      type="button"
+      className="colorful-gradient px-8 py-2 text-white rounded-xl my-5"
       onClick={props.onClick}
     >
       {props.text}
@@ -141,7 +149,6 @@ const Game = () => {
   const compare = useCallback(() => {
     const elOne = openEls[0];
     const elTwo = openEls[1];
-    //enable();
     if (elOne.img === elTwo.img) {
       setResult((prevResult) => [...prevResult, elOne, elTwo]);
       setOpenEls([]);
@@ -195,11 +202,7 @@ const Game = () => {
     return (
       <div
         style={{
-          background: card.isOpen
-            ? `url(${card.img}) center/200px 200px`
-            : "#ffe6ea",
-          width: "200px",
-          height: "200px",
+          background: card.isOpen ? `url(${card.img}) center/100%` : "#ffe6ea",
           borderRadius: "12px",
         }}
         key={card.id}
@@ -212,22 +215,20 @@ const Game = () => {
   });
 
   return (
-    <section>
-      <div className="container flex flex-col items-center justify-between">
-        <h2 className="font-header text-[60px] md:text-[80px] text-center">
+    <section className="flex flex-col justify-center items-center h-[70vh] md:h-[100vh]">
+      <div className="container w-fit mx-auto flex flex-col items-center">
+        <h2 className="font-header text-[50px] ss:text-[60px] md:text-[80px] text-center">
           Play the game
         </h2>
-        <p className="font-poppins text-[24px] mb-10 text-center">
+        <p className="font-poppins text-[20px] ss:text-[24px] mb-5 text-center">
           Find and open all matching cards:
         </p>
-        <div className="controls-wrapper flex items-center justify-end w-[45%] gap-1 mb-7">
-          <ResetButton onClick={clearLocalStorage} text="Reset Game" />
-        </div>
+        <ResetButton onClick={clearLocalStorage} text="Reset Game" />
         <div className="game-wrapper relative">
-          <div className="gamefield grid grid-cols-4 grid-rows-4 gap-1">
+          <div className="gamefield grid grid-cols-4 grid-rows-4 gap-1 w-[290px] h-[290px] ss:w-[600px] ss:h-[600px] md:w-[812px] md:h-[812px]">
             {cardsEls}
           </div>
-          {victory && <VictoryMsg onClick={clearLocalStorage} />}
+          {victory && <VictoryReward onClick={clearLocalStorage} />}
         </div>
       </div>
     </section>

@@ -25,6 +25,22 @@ import {
   mingi,
   yunho,
   jongho,
+  rewardChan,
+  rewardBin,
+  rewardFelix,
+  rewardHan,
+  rewardJoong,
+  rewardHyunjin,
+  rewardIN,
+  rewardJongho,
+  rewardMingi,
+  rewardSan,
+  rewardHwa,
+  rewardMin,
+  rewardWoo,
+  rewardYeosang,
+  rewardYunho,
+  rewardMinho,
 } from "../assets";
 
 export const navLinks = [
@@ -218,5 +234,77 @@ export const picsCollection: Array<Card> = [
     img: jongho,
     isOpen: false,
     isDisabled: false,
+  },
+];
+
+interface Reward {
+  id: string;
+  img: string;
+}
+
+export const rewardArray: Array<Reward> = [
+  {
+    id: "1",
+    img: rewardChan,
+  },
+  {
+    id: "2",
+    img: rewardBin,
+  },
+  {
+    id: "3",
+    img: rewardFelix,
+  },
+  {
+    id: "4",
+    img: rewardHan,
+  },
+  {
+    id: "5",
+    img: rewardJoong,
+  },
+  {
+    id: "6",
+    img: rewardHyunjin,
+  },
+  {
+    id: "7",
+    img: rewardIN,
+  },
+  {
+    id: "8",
+    img: rewardJongho,
+  },
+  {
+    id: "9",
+    img: rewardMingi,
+  },
+  {
+    id: "10",
+    img: rewardSan,
+  },
+  {
+    id: "11",
+    img: rewardHwa,
+  },
+  {
+    id: "12",
+    img: rewardMin,
+  },
+  {
+    id: "13",
+    img: rewardWoo,
+  },
+  {
+    id: "14",
+    img: rewardYeosang,
+  },
+  {
+    id: "15",
+    img: rewardYunho,
+  },
+  {
+    id: "16",
+    img: rewardMinho,
   },
 ];
