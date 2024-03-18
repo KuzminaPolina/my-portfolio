@@ -60,8 +60,16 @@ import rewardWoo from "./game/Bandmates/Wooyoung.jpg";
 import rewardYeosang from "./game/Bandmates/Yeosang.jpg";
 import rewardYunho from "./game/Bandmates/Yunho.jpg";
 import rewardMinho from "./game/Bandmates/leeknow.jpg";
+import phoneWhite from "./phone-icon-white.png";
+import mailWhite from "./mail-icon-white.png";
+import gitWhite from "./git-icon-white.png";
+import linkedinWhite from "./linkedin-icon-white.png";
 
 export {
+  phoneWhite,
+  mailWhite,
+  gitWhite,
+  linkedinWhite,
   quotes,
   send,
   star,

@@ -1,8 +1,8 @@
 import {
-  facebook,
-  instagram,
+  gitIcon,
+  phone,
   linkedin,
-  twitter,
+  envelop,
   sedonaMobile,
   sedonaDesktop,
   gymMobile,
@@ -41,6 +41,10 @@ import {
   rewardYeosang,
   rewardYunho,
   rewardMinho,
+  phoneWhite,
+  mailWhite,
+  gitWhite,
+  linkedinWhite,
 } from "../assets";
 
 export const navLinks = [
@@ -57,10 +61,6 @@ export const navLinks = [
     title: "About",
   },
   {
-    id: "contacts",
-    title: "Contacts",
-  },
-  {
     id: "relax",
     title: "Play a Game",
   },
@@ -69,23 +69,32 @@ export const navLinks = [
 export const socialMedia = [
   {
     id: "social-media-1",
-    icon: instagram,
-    link: "https://www.instagram.com/",
-  },
-  {
-    id: "social-media-2",
-    icon: facebook,
-    link: "https://www.facebook.com/",
+    title: "E-mail:",
+    icon: envelop,
+    iconWhite: mailWhite,
+    link: "mailto:etein@yandex.ru",
   },
   {
     id: "social-media-3",
-    icon: twitter,
-    link: "https://www.twitter.com/",
+    title: "Phone:",
+    icon: phone,
+    iconWhite: phoneWhite,
+    link: "tel:+79110234928",
   },
   {
+    id: "social-media-3",
+    title: "GitHub:",
+    icon: gitIcon,
+    iconWhite: gitWhite,
+    link: "https://github.com/KuzminaPolina",
+  },
+
+  {
     id: "social-media-4",
+    title: "LinkedIn:",
     icon: linkedin,
-    link: "https://www.linkedin.com/",
+    iconWhite: linkedinWhite,
+    link: "https://www.linkedin.com/in/kuzminalina/",
   },
 ];
 

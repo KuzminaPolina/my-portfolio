@@ -101,7 +101,12 @@ const Portfolio = () => {
     damping: 30,
   });
   return (
-    <section className="relative bg-slate-50" ref={ref} scroll-snap>
+    <section
+      id="portfolio"
+      className="relative bg-slate-50"
+      ref={ref}
+      scroll-snap
+    >
       <div className="progress sticky top-0 left-0 bottom-0 pt-[50px] text-center overflow-hidden bg-slate-50 z-10">
         <h2 className="font-header text-[60px] md:text-[80px] text-center">
           Portfolio

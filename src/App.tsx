@@ -1,5 +1,4 @@
 import About from "./components/About";
-import Contacts from "./components/Contacts";
 import Footer from "./components/Footer";
 import Game from "./components/Game";
 import Hero from "./components/Hero";
@@ -29,7 +28,6 @@ function App() {
         <Portfolio />
         <About />
         <Game />
-        <Contacts />
       </main>
 
       <footer className={`bg-slate-50`}>

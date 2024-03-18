@@ -22,6 +22,7 @@ const Resume = () => {
 
   return (
     <section
+      id="resume"
       className="relative flex h-[80vh] w-[100%] md:h-[90vh] justify-center items-center overflow-hidden bg-slate-50"
       ref={ref}
     >

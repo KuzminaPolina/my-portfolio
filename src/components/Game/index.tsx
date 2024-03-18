@@ -215,8 +215,11 @@ const Game = () => {
   });
 
   return (
-    <section className="flex flex-col justify-center items-center h-[70vh] md:h-[100vh]">
-      <div className="container w-fit mx-auto flex flex-col items-center">
+    <section
+      id="relax"
+      className="flex flex-col justify-center items-center md:h-[100vh]"
+    >
+      <div className="container w-fit h-fit mx-auto pb-10 flex flex-col items-center">
         <h2 className="font-header text-[50px] ss:text-[60px] md:text-[80px] text-center">
           Play the game
         </h2>
