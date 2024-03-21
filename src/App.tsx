@@ -5,21 +5,14 @@ import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
 import Portfolio from "./components/Portfolio";
 import Resume from "./components/Resume";
-import styles from "./style";
 
 function App() {
   return (
     <div className={`bg-slate-50 text-black flex flex-col`}>
-      <div className={`${styles.paddingX} ${styles.flexCenter}`}>
-        <div className={`${styles.boxWidth}`}>
-          <Navbar />
-        </div>
-      </div>
-      <div className={`bg-slate-50 ${styles.flexStart}`}>
-        <div className={`${styles.boxWidth}`}>
-          <Hero />
-        </div>
-      </div>
+      <header className="px-6 sm:px-16 flex flex-col justify-center items-center">
+        <Navbar />
+        <Hero />
+      </header>
 
       <main
         className={`bg-slate-50 max-w-screen-xl flex flex-col self-center w-[100%]`}

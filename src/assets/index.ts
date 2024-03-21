@@ -1,14 +1,9 @@
-import quotes from "./quotes.svg";
-import send from "./Send.svg";
-import star from "./Star.svg";
 import menu from "./menu.svg";
 import close from "./close.svg";
-import arrowUp from "./arrow-up.svg";
-import facebook from "./facebook.svg";
-import instagram from "./instagram.svg";
-import twitter from "./twitter.svg";
-import hero2 from "./do-something-no-bkg.png";
-import stick1 from "./stick-1.png";
+import hero from "./do-something-no-bkg.png";
+import heroWebp from "./do-something-no-bkg-webp.webp";
+import stick from "./stick-1.png";
+import stickWebp from "./stick-webp.webp";
 import html5 from "./html5.png";
 import css3 from "./css3.png";
 import javascriptIcon from "./javascript.png";
@@ -19,8 +14,6 @@ import envelop from "./mail-icon.png";
 import phone from "./phone-icon.png";
 import gitIcon from "./git-icon.png";
 import linkedin from "./linkedin-icon.png";
-import crowUp from "./crow-wings-up.png";
-import crowDown from "./crow-wings-down.png";
 import sedonaMobile from "./website_screens/SedonaVertical_mobile.jpg";
 import sedonaDesktop from "./website_screens/Sedona_tablet_desktop.jpg";
 import gymMobile from "./website_screens/gym_mobile.jpg";
@@ -70,17 +63,12 @@ export {
   mailWhite,
   gitWhite,
   linkedinWhite,
-  quotes,
-  send,
-  star,
   menu,
   close,
-  arrowUp,
-  facebook,
-  instagram,
-  twitter,
-  hero2,
-  stick1,
+  hero,
+  heroWebp,
+  stick,
+  stickWebp,
   html5,
   javascriptIcon,
   css3,
@@ -91,8 +79,6 @@ export {
   phone,
   gitIcon,
   linkedin,
-  crowUp,
-  crowDown,
   gymMobile,
   gymDesktop,
   sedonaMobile,

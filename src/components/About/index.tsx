@@ -143,10 +143,10 @@ const About = () => {
           <p className="font-poppins text-[20px] mb-10">
             Inquisitive, responsible, initiative, love learning new things
           </p>
-          <h3 className="font-menu2 uppercase text-[28px] mb-4 text-right">
+          <h3 className="font-menu2 uppercase text-[28px] mb-4">
             Speaking languages:
           </h3>
-          <p className="font-poppins text-[24px] mb-10 text-right">
+          <p className="font-poppins text-[24px] mb-10">
             Russian (Native), English (IELTS 8.0/C1), Chinese (TOCFL/B2).
           </p>
           <h3 className="font-menu2 uppercase text-[24px] mb-4">Hobbies:</h3>

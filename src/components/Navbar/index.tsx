@@ -5,7 +5,7 @@ import { close, menu } from "../../assets";
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
   return (
-    <nav className="w-full flex py-6 navbar justify-between items-center">
+    <nav className="w-full flex py-6 navbar justify-between items-center xl:max-w-[1280px]">
       <ul className="w-1/2 list-none sm:flex hidden items-center justify-end flex-1">
         {navLinks.map((nav, index) => (
           <li

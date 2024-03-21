@@ -66,7 +66,7 @@ const Resume = () => {
       ></motion.div>
       <div
         className="md:hidden crow-bg-top"
-        style={{ top: "200px", width: "150px" }}
+        style={{ top: "150px", width: "150px" }}
       ></div>
       <motion.div
         className="crow-bg-bottom md:block hidden"
@@ -77,7 +77,7 @@ const Resume = () => {
       ></motion.div>
       <div
         className="md:hidden crow-bg-bottom"
-        style={{ bottom: "100px", width: "150px" }}
+        style={{ bottom: "70px", width: "150px" }}
       ></div>
     </section>
   );
