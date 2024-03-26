@@ -44,35 +44,41 @@ const Hero = () => {
 
         <img
           src={tailwind}
+          alt="tailwind icon"
           className={`absolute right-16 ss:right-28 bottom-[30px] ${
             isHovered ? "rotateIconTW" : null
           } w-[120px] ss:w-[200px]`}
         />
         <img
           src={reactIcon}
+          alt="react icon"
           className={`absolute right-[85px] bottom-[80px] ss:bottom-[105px] ${
             isHovered ? "rotateIconTW" : null
           } transition-all w-[70px] ss:w-[100px]`}
         />
         <img
           src={javascriptIcon}
+          alt="js icon"
           className={`absolute right-[130px] ss:right-[170px] bottom-[50px] rotate-[40deg] ${
             isHovered ? "rotateIconJS" : null
           } transition-all h-[55px] ss:h-[85px]`}
         />
         <img
           src={typescript}
+          alt="typescript icon"
           className={`absolute right-[70px] ss:right-[100px] bottom-10 rotate-[-35deg] ${
             isHovered ? "rotateIconTS" : null
           } transition-all h-[45px] ss:h-[70px]`}
         />
         <img
           src={css3}
+          alt="css icon"
           className={`absolute right-[30px] bottom-6 rotate-[20deg] ${
             isHovered ? "rotateIconCSS" : null
           } transition-all w-[50px] ss:w-20`}
         />
         <img
+          alt="html icon"
           src={html5}
           className={`absolute right-[40px] bottom-14 ss:bottom-20 rotate-[-10deg] ${
             isHovered ? "rotateIconHTML" : null
@@ -81,10 +87,10 @@ const Hero = () => {
       </div>
       <div className="flex-1 flex flex-col xl:px-0 sm:px-0 p-6 items-center justify-center xl:w-1/2 sm:w-full">
         <div>
-          <h1 className="font-poppins text-center text-[24px] py-4">
+          <h1 className="font-poppins font-normal text-center text-[24px] py-4">
             Hello, I'm Kuzmina Lina
           </h1>
-          <p className="font-poppins text-center">
+          <p className="font-poppins font-normal text-center">
             I'm a front end developer. Contact me:
           </p>
           <ul className="py-4 flex justify-center">

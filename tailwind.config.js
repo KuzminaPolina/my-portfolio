@@ -13,7 +13,6 @@ export default {
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],
         menu: ["Waiting for the Sunrise", "cursive"],
-        menu2: ["Sue Ellen Francisco", "cursive"],
         header: ["Londrina Outline", "sans-serif"],
       },
     },

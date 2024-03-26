@@ -27,32 +27,31 @@ const About = () => {
           <h2 className="font-header text-[80px] text-right mb-8">
             Hard skills
           </h2>
-          <h3 className="font-menu2 uppercase text-[28px] mb-4 text-right">
+          <h3 className="font-menu font-normal uppercase text-[28px] mb-4 text-right">
             Website layout:
           </h3>
-          <p className="font-poppins text-[24px] mb-10 text-right">
+          <p className="font-poppins font-normal text-[22px] mb-10 text-right">
             HTML5, semantic tags, SEO adaptation, adaptive and responsive
-            layout, adaptive images, loading speed adjustment, resources
-            preloading
+            layout, adaptive images, loading speed adjustment
           </p>
-          <h3 className="font-menu2 uppercase text-[28px] mb-4 text-right">
+          <h3 className="font-menu font-normal uppercase text-[28px] mb-4 text-right">
             Website styling:
           </h3>
-          <p className="font-poppins text-[24px] mb-10 text-right">
+          <p className="font-poppins font-normal text-[22px] mb-10 text-right">
             CSS3, LESS/SASS, Tailwind,
             <br />
             Styled components for React
           </p>
-          <h3 className="font-menu2 uppercase text-[28px] mb-4 text-right">
+          <h3 className="font-menu font-normal uppercase text-[28px] mb-4 text-right">
             Website functionality:
           </h3>
-          <p className="font-poppins text-[24px] mb-10 text-right">
+          <p className="font-poppins font-normal text-[22px] mb-10 text-right">
             JavaScript, TypeScript, React, MobX
           </p>
-          <h3 className="font-menu2 uppercase text-[28px] mb-4 text-right">
+          <h3 className="font-menu font-normal uppercase text-[28px] mb-4 text-right">
             Work automatization:
           </h3>
-          <p className="font-poppins text-[24px] mb-10 text-right">
+          <p className="font-poppins font-normal text-[22px] mb-10 text-right">
             Gulp, Vite,
             <br />
             Git, task managers (Trello, Linear, etc.)
@@ -62,41 +61,35 @@ const About = () => {
           <h2 className="font-header text-[60px] md:text-[80px] text-right mb-8">
             Hard skills
           </h2>
-          <h3 className="font-menu2 uppercase text-[28px] mb-4 text-right">
+          <h3 className="font-menu font-normal uppercase text-[22px] mb-4 text-right">
             Website layout:
           </h3>
-          <p className="font-poppins text-[24px] mb-10 text-right">
+          <p className="font-poppins font-normal text-[20px] mb-10 text-right">
             HTML5, semantic tags, SEO adaptation, <br />
             adaptive and responsive layout, adaptive images, <br />
-            loading speed adjustment, resources preloading
+            loading speed adjustment
           </p>
-          <h3 className="font-menu2 uppercase text-[28px] mb-4 text-right">
+          <h3 className="font-menu font-normal uppercase text-[22px] mb-4 text-right">
             Website styling:
           </h3>
-          <p className="font-poppins text-[24px] mb-10 text-right">
+          <p className="font-poppins font-normal text-[20px] mb-10 text-right">
             CSS3, LESS/SASS, Tailwind,
             <br />
             Styled components for React
           </p>
-          <h3 className="font-menu2 uppercase text-[28px] mb-4 text-right">
+          <h3 className="font-menu font-normal uppercase text-[22px] mb-4 text-right">
             Website functionality:
           </h3>
-          <p className="font-poppins text-[24px] mb-10 text-right">
+          <p className="font-poppins font-normal text-[20px] mb-10 text-right">
             JavaScript, TypeScript, React, MobX
           </p>
-          <h3 className="font-menu2 uppercase text-[28px] mb-4 text-right">
+          <h3 className="font-menu font-normal uppercase text-[22px] mb-4 text-right">
             Work automatization:
           </h3>
-          <p className="font-poppins text-[24px] mb-10 text-right">
+          <p className="font-poppins font-normal text-[20px] mb-10 text-right">
             Gulp, Vite,
             <br />
             Git, task managers (Trello, Linear, etc.)
-          </p>
-          <h3 className="font-menu2 uppercase text-[28px] mb-4 text-right">
-            Speaking languages:
-          </h3>
-          <p className="font-poppins text-[24px] mb-10 text-right">
-            Russian (Native), English (IELTS 8.0/C1), Chinese (TOCFL/B2).
           </p>
         </div>
 
@@ -105,27 +98,29 @@ const About = () => {
           style={{ x: rtl }}
         >
           <h2 className="font-header text-[80px] mb-8">Soft skills</h2>
-          <h3 className="font-menu2 uppercase text-[28px] mb-4">
+          <h3 className="font-menu font-normal uppercase text-[28px] mb-4">
             Communication:
           </h3>
-          <p className="font-poppins text-[24px] mb-10">
+          <p className="font-poppins font-normal text-[22px] mb-10">
             Teamwork, multi-cultural communication, conflict resolution,
             compromise, subordination
           </p>
-          <h3 className="font-menu2 uppercase text-[28px] mb-4">
+          <h3 className="font-menu font-normal uppercase text-[28px] mb-4">
             Personal qualities:
           </h3>
-          <p className="font-poppins text-[24px] mb-10">
+          <p className="font-poppins font-normal text-[22px] mb-10">
             Motivated, adaptable, meticulous learner, proactive
           </p>
-          <h3 className="font-menu2 uppercase text-[28px] mb-4">
+          <h3 className="font-menu font-normal uppercase text-[28px] mb-4">
             Speaking languages:
           </h3>
-          <p className="font-poppins text-[24px] mb-10">
+          <p className="font-poppins font-normal text-[22px] mb-10">
             Russian (Native), English (IELTS 8.0/C1), Chinese (TOCFL/B2).
           </p>
-          <h3 className="font-menu2 uppercase text-[28px] mb-4">Hobbies:</h3>
-          <p className="font-poppins text-[24px] mb-10">
+          <h3 className="font-menu font-normal uppercase text-[28px] mb-4">
+            Hobbies:
+          </h3>
+          <p className="font-poppins text-[22px] mb-10">
             Drawing, dancing, hiking and seeing nature.
           </p>
         </motion.div>
@@ -133,24 +128,28 @@ const About = () => {
           <h2 className="font-header text-[60px] md:text-[80px] mb-8">
             Soft skills
           </h2>
-          <h3 className="font-menu2 uppercase text-[24px] mb-4">Experience:</h3>
-          <p className="font-poppins text-[20px] mb-10 ">
+          <h3 className="font-menu font-normal uppercase text-[22px] mb-4">
+            Experience:
+          </h3>
+          <p className="font-poppins font-normal text-[20px] mb-10 ">
             Teamwork, international teams, management positions
           </p>
-          <h3 className="font-menu2 uppercase text-[24px] mb-4">
+          <h3 className="font-menu font-normal uppercase text-[22px] mb-4">
             Personal qualities:
           </h3>
-          <p className="font-poppins text-[20px] mb-10">
+          <p className="font-poppins font-normal text-[20px] mb-10">
             Inquisitive, responsible, initiative, love learning new things
           </p>
-          <h3 className="font-menu2 uppercase text-[28px] mb-4">
+          <h3 className="font-menu font-normal uppercase text-[22px] mb-4">
             Speaking languages:
           </h3>
-          <p className="font-poppins text-[24px] mb-10">
+          <p className="font-poppins font-normal text-[20px] mb-10">
             Russian (Native), English (IELTS 8.0/C1), Chinese (TOCFL/B2).
           </p>
-          <h3 className="font-menu2 uppercase text-[24px] mb-4">Hobbies:</h3>
-          <p className="font-poppins text-[20px] mb-10">
+          <h3 className="font-menu font-normal uppercase text-[22px] mb-4">
+            Hobbies:
+          </h3>
+          <p className="font-poppins font-normal text-[20px] mb-10">
             Drawing, dancing, hiking and seeing nature.
           </p>
         </div>

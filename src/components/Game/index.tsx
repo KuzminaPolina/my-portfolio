@@ -215,15 +215,12 @@ const Game = () => {
   });
 
   return (
-    <section
-      id="relax"
-      className="flex flex-col justify-center items-center md:h-[100vh]"
-    >
+    <section id="relax" className="flex flex-col justify-center items-center">
       <div className="container w-fit h-fit mx-auto pb-10 flex flex-col items-center">
         <h2 className="font-header text-[50px] ss:text-[60px] md:text-[80px] text-center">
           Play the game
         </h2>
-        <p className="font-poppins text-[20px] ss:text-[24px] mb-5 text-center">
+        <p className="font-poppins text-[20px] ss:text-[22px] text-center">
           Find and open all matching cards:
         </p>
         <ResetButton onClick={clearLocalStorage} text="Reset Game" />

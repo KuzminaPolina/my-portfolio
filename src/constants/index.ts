@@ -45,6 +45,12 @@ import {
   mailWhite,
   gitWhite,
   linkedinWhite,
+  sedonaMobileWebp,
+  sedonaDesktopWebp,
+  gymMobileWebp,
+  gymDesktopWebp,
+  travelMobileWebp,
+  travelDesktopWebp,
 } from "../assets";
 
 export const navLinks = [
@@ -103,6 +109,8 @@ export const projects: {
   title: string;
   img_mobile: string;
   img_desktop: string;
+  img_mobile_webp: string;
+  img_desktop_webp: string;
   feature: string;
   stack: string;
   additionalInfo: string;
@@ -113,6 +121,8 @@ export const projects: {
     title: "Sedona",
     img_mobile: sedonaMobile,
     img_desktop: sedonaDesktop,
+    img_mobile_webp: sedonaMobileWebp,
+    img_desktop_webp: sedonaDesktopWebp,
     feature: "Adaptive website",
     stack: "HTML, CSS, LESS, Gulp, JavaScript",
     additionalInfo: "All pages clickable",
@@ -123,6 +133,8 @@ export const projects: {
     title: "Gym",
     img_mobile: gymMobile,
     img_desktop: gymDesktop,
+    img_mobile_webp: gymMobileWebp,
+    img_desktop_webp: gymDesktopWebp,
     feature: "Fully responsive landing page",
     stack: "HTML, CSS, SASS, Gulp, Javascript",
     additionalInfo: "Responsive sliders",
@@ -133,6 +145,8 @@ export const projects: {
     title: "Travels",
     img_mobile: travelsMobile,
     img_desktop: travelsDesktop,
+    img_mobile_webp: travelMobileWebp,
+    img_desktop_webp: travelDesktopWebp,
     feature: "Fully responsive landing page",
     stack: "HTML, CSS, SASS, Gulp, Javascript",
     additionalInfo: "Transparent menu over slider hero section",

@@ -16,10 +16,16 @@ import gitIcon from "./git-icon.png";
 import linkedin from "./linkedin-icon.png";
 import sedonaMobile from "./website_screens/SedonaVertical_mobile.jpg";
 import sedonaDesktop from "./website_screens/Sedona_tablet_desktop.jpg";
+import sedonaMobileWebp from "./website_screens/SedonaVertical_mobile_webp.webp";
+import sedonaDesktopWebp from "./website_screens/Sedona_tablet_desktop_webp.webp";
 import gymMobile from "./website_screens/gym_mobile.jpg";
 import gymDesktop from "./website_screens/gym_tablet_desktop.jpg";
+import gymMobileWebp from "./website_screens/gym_mobile_webp.webp";
+import gymDesktopWebp from "./website_screens/gym_tablet_desktop_webp.webp";
 import travelsMobile from "./website_screens/travels_mobile.jpg";
 import travelsDesktop from "./website_screens/travels_tablet_desktop.jpg";
+import travelMobileWebp from "./website_screens/travels_mobile_webp.webp";
+import travelDesktopWebp from "./website_screens/travels_tablet_desktop_webp.webp";
 import chan from "./game/chan.jpg";
 import binnie from "./game/binnie.jpg";
 import han from "./game/han.jpg";
@@ -59,6 +65,12 @@ import gitWhite from "./git-icon-white.png";
 import linkedinWhite from "./linkedin-icon-white.png";
 
 export {
+  sedonaMobileWebp,
+  sedonaDesktopWebp,
+  gymMobileWebp,
+  gymDesktopWebp,
+  travelMobileWebp,
+  travelDesktopWebp,
   phoneWhite,
   mailWhite,
   gitWhite,

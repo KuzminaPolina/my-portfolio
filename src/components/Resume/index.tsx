@@ -37,7 +37,7 @@ const Resume = () => {
       <a
         href="https://drive.google.com/file/d/1PtcrYBtjl-KbMHMZgxgNl03TBokj0Nqm/view?usp=drive_link"
         target="_blank"
-        className="font-menu uppercase text-[40px] absolute p-4 menu md:hidden block"
+        className="font-menu uppercase text-[40px] absolute p-4 menu md:hidden block outline-text"
       >
         My resume (CV)
       </a>
@@ -66,7 +66,7 @@ const Resume = () => {
       ></motion.div>
       <div
         className="md:hidden crow-bg-top"
-        style={{ top: "150px", width: "150px" }}
+        style={{ top: "140px", width: "150px" }}
       ></div>
       <motion.div
         className="crow-bg-bottom md:block hidden"

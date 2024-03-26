@@ -1,10 +1,33 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Waiting+for+the+Sunrise&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Sue+Ellen+Francisco&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Londrina+Outline&family=Waiting+for+the+Sunrise&display=swap");
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+
+@font-face {
+  font-display: swap;
+  font-family: "Waiting for the Sunrise";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../src/fonts/Waiting-for-the-Sunrise.woff2") format("woff2"),
+    url("../src/fonts/Waiting-for-the-Sunrise.woff") format("woff");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../src/fonts/Poppins-Regular.woff2") format("woff2"),
+    url("../src/fonts/Poppins-Regular.woff") format ("woff");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Londrina Outline";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../src/fonts/Londrina-Outline.woff2") format("woff2"),
+    url("../src/fonts/Londrina-Outline.woff") format("woff");
+}
 
 :root {
   --black-gradient: linear-gradient(

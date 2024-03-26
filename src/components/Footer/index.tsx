@@ -5,7 +5,7 @@ const Footer = () => {
     return (
       <li className="flex flex-col justify-center items-center">
         <a href={item.link}>
-          <img src={item.iconWhite} className="h-10" />
+          <img src={item.iconWhite} alt="contact icon" className="h-10" />
         </a>
       </li>
     );

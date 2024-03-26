@@ -2,7 +2,7 @@ import React from "react";
 import { projects } from "../../constants";
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 
-const Single = ({ project }) => {
+const Single = (project) => {
   const ref = React.useRef<HTMLInputElement>(null);
 
   const { scrollYProgress } = useScroll({
@@ -21,16 +21,26 @@ const Single = ({ project }) => {
           ref={ref}
         >
           <motion.div
-            className="imgContainer flex-1 max-h-[500px] hidden sm:block"
+            className="imgContainer flex-1 max-h-[500px] hidden sm:block bg-cyan-500 m-0 p-0"
             style={{ x: ltr }}
           >
             <picture>
+              <source
+                type="image/webp"
+                media="(min-width: 768px)"
+                srcSet={project.img_desktop_webp}
+              />
+              <source
+                type="image/webp"
+                media="(min-width: 320px)"
+                srcSet={project.img_mobile_webp}
+              />
               <source media="(min-width: 768px)" srcSet={project.img_desktop} />
               <img
                 src={project.img_mobile}
                 alt="handpainted website screenshot"
                 width="700"
-                className="object-cover h-[100%] w-[100%]"
+                className="object-cover h-[100%] w-[100%] m-0 p-0"
               />
             </picture>
           </motion.div>
@@ -54,31 +64,35 @@ const Single = ({ project }) => {
               {project.title}
             </h3>
             <ul className="list-disc pl-[20px]">
-              <li>{project.feature}</li>
-              <li>{project.stack}</li>
-              <li>{project.additionalInfo}</li>
+              <li className="font-poppins font-normal">{project.feature}</li>
+              <li className="font-poppins font-normal">{project.stack}</li>
+              <li className="font-poppins font-normal">
+                {project.additionalInfo}
+              </li>
             </ul>
             <a
               href={project.link}
               target="_blank"
-              className="font-menu text-[30px] h-10 px-5 link-button text-white w-fit"
+              className="font-menu font-normal text-[30px] h-10 px-5 link-button text-white w-fit"
             >
               Show me the website!
             </a>
           </motion.div>
 
-          <div className="textContainer flex flex-col gap-[30px] z-0 sm:hidden my-5">
+          <div className="textContainer flex flex-1 flex-col gap-[30px] z-0 sm:hidden my-5 mx-4">
             <h3 className="font-menu font-extrabold uppercase text-[50px]">
               {project.title}
             </h3>
             <ul className="list-disc pl-[20px]">
-              <li>{project.feature}</li>
-              <li>{project.stack}</li>
-              <li>{project.additionalInfo}</li>
+              <li className="font-poppins font-normal">{project.feature}</li>
+              <li className="font-poppins font-normal">{project.stack}</li>
+              <li className="font-poppins font-normal">
+                {project.additionalInfo}
+              </li>
             </ul>
             <a
               href={project.link}
-              className="font-menu text-[30px] h-10 px-5 link-button text-white w-fit"
+              className="font-menu font-normal text-[30px] h-10 px-5 link-button text-center text-white w-fit"
             >
               Show me the website!
             </a>
