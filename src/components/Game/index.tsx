@@ -8,6 +8,13 @@ interface Card {
   isOpen: boolean;
   isDisabled: boolean;
 }
+interface VictoryReward {
+  onClick: () => void;
+}
+interface Button {
+  onClick: () => void;
+  text: string;
+}
 
 let finalGameSet: Card[] = [];
 
@@ -79,7 +86,7 @@ const retrieveFromLocal = () => {
   }
 };
 
-const VictoryReward = (props) => {
+const VictoryReward = (props: VictoryReward) => {
   const randomRewardImg = pickRandomRewardImg();
   return (
     <div className="absolute top-0 left-0 w-full h-full flex place-content-center">
@@ -100,7 +107,7 @@ const VictoryReward = (props) => {
   );
 };
 
-const ResetButton = (props) => {
+const ResetButton = (props: Button) => {
   return (
     <button
       type="button"

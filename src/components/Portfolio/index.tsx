@@ -2,7 +2,23 @@ import React from "react";
 import { projects } from "../../constants";
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 
-const Single = (project) => {
+interface SingleProps {
+  project: {
+    id: number;
+    title: string;
+    img_mobile: string;
+    img_desktop: string;
+    img_mobile_webp: string;
+    img_desktop_webp: string;
+    feature: string;
+    stack: string;
+    additionalInfo: string;
+    link: string;
+  };
+  key: number;
+}
+
+const Single = (props: SingleProps) => {
   const ref = React.useRef<HTMLInputElement>(null);
 
   const { scrollYProgress } = useScroll({
@@ -28,16 +44,19 @@ const Single = (project) => {
               <source
                 type="image/webp"
                 media="(min-width: 768px)"
-                srcSet={project.img_desktop_webp}
+                srcSet={props.project.img_desktop_webp}
               />
               <source
                 type="image/webp"
                 media="(min-width: 320px)"
-                srcSet={project.img_mobile_webp}
+                srcSet={props.project.img_mobile_webp}
               />
-              <source media="(min-width: 768px)" srcSet={project.img_desktop} />
+              <source
+                media="(min-width: 768px)"
+                srcSet={props.project.img_desktop}
+              />
               <img
-                src={project.img_mobile}
+                src={props.project.img_mobile}
                 alt="handpainted website screenshot"
                 width="700"
                 className="object-cover h-[100%] w-[100%] m-0 p-0"
@@ -48,7 +67,7 @@ const Single = (project) => {
           <div className="imgContainer flex-1 max-h-[500px] block sm:hidden my-5">
             <picture>
               <img
-                src={project.img_mobile}
+                src={props.project.img_mobile}
                 alt="handpainted website screenshot"
                 width="700"
                 className="object-cover h-[100%] w-[100%]"
@@ -61,17 +80,21 @@ const Single = (project) => {
             style={{ x: rtl }}
           >
             <h3 className="font-menu font-extrabold uppercase text-[50px] md:text-[60px]">
-              {project.title}
+              {props.project.title}
             </h3>
             <ul className="list-disc pl-[20px]">
-              <li className="font-poppins font-normal">{project.feature}</li>
-              <li className="font-poppins font-normal">{project.stack}</li>
               <li className="font-poppins font-normal">
-                {project.additionalInfo}
+                {props.project.feature}
+              </li>
+              <li className="font-poppins font-normal">
+                {props.project.stack}
+              </li>
+              <li className="font-poppins font-normal">
+                {props.project.additionalInfo}
               </li>
             </ul>
             <a
-              href={project.link}
+              href={props.project.link}
               target="_blank"
               className="font-menu font-normal text-[30px] h-10 px-5 link-button text-white w-fit"
             >
@@ -81,17 +104,21 @@ const Single = (project) => {
 
           <div className="textContainer flex flex-1 flex-col gap-[30px] z-0 sm:hidden my-5 mx-4">
             <h3 className="font-menu font-extrabold uppercase text-[50px]">
-              {project.title}
+              {props.project.title}
             </h3>
             <ul className="list-disc pl-[20px]">
-              <li className="font-poppins font-normal">{project.feature}</li>
-              <li className="font-poppins font-normal">{project.stack}</li>
               <li className="font-poppins font-normal">
-                {project.additionalInfo}
+                {props.project.feature}
+              </li>
+              <li className="font-poppins font-normal">
+                {props.project.stack}
+              </li>
+              <li className="font-poppins font-normal">
+                {props.project.additionalInfo}
               </li>
             </ul>
             <a
-              href={project.link}
+              href={props.project.link}
               className="font-menu font-normal text-[30px] h-10 px-5 link-button text-center text-white w-fit"
             >
               Show me the website!
