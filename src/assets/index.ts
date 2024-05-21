@@ -63,6 +63,7 @@ import phoneWhite from "./phone-icon-white.png";
 import mailWhite from "./mail-icon-white.png";
 import gitWhite from "./git-icon-white.png";
 import linkedinWhite from "./linkedin-icon-white.png";
+import websitePreview from "./website-preview.png";
 
 export {
   sedonaMobileWebp,
@@ -130,4 +131,5 @@ export {
   rewardYeosang,
   rewardYunho,
   rewardMinho,
+  websitePreview,
 };

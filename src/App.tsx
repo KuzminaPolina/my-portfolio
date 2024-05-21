@@ -5,6 +5,7 @@ import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
 import Portfolio from "./components/Portfolio";
 import Resume from "./components/Resume";
+import { websitePreview } from "./assets";
 
 function App() {
   return (
@@ -12,6 +13,9 @@ function App() {
       <header className="px-6 sm:px-16 flex flex-col justify-center items-center">
         <Navbar />
         <Hero />
+        <div className="visually-hidden">
+          <img src={websitePreview}/>
+        </div>
       </header>
 
       <main
